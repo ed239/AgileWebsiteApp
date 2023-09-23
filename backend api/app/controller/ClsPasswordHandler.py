@@ -1,4 +1,6 @@
-from app.scripts.ClsPasswordGenerator import PasswordGenerator
+from app.controller.ClsPasswordGenerator import PasswordGenerator
+from fastapi import HTTPException
+
 
 
 class PasswordHandler:
@@ -19,18 +21,15 @@ class PasswordHandler:
         else:
             return False
 
-    def sign_up(self):
+    def sign_up(self, role):
         if not self.signup_condition():
             return "Email already exist, please try sign in"
 
         payload = {"Email":self.client.email,
                    "Password":self.client.encoded_password,
-                   "CurBetID":0,
-                   "FriendList":[],
-                   "BetID":[]
+                   "Role": role
                    }
 
-        print(payload)
 
         self.mycol.insert_one(payload)
 
@@ -44,10 +43,14 @@ class PasswordHandler:
                        "Password": 1
                    }}]
         mycursor = self.mycol.aggregate(myquery)
-        password = list(mycursor)[0]['Password']
+        mylist = next(mycursor, None)
+        if not mylist:
+            raise HTTPException(status_code=403, detail="Unauthorized email or password, please try again")
+        password = mylist['Password']
         if self.client.encoded_password == password:
             return "Log in successful"
         else:
-            return "Unauthorized email or password, please try again"
+            raise HTTPException(status_code=403, detail="Unauthorized email or password, please try again")
+
 
 
