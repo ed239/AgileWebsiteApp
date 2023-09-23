@@ -3,10 +3,11 @@ import os
 from importlib import import_module
 from app.config.Config import settings, module_dir
 from fastapi import APIRouter, Depends, status
-from app.schema.AuthSchema import AuthSchema
-from app.scripts.DBConn import mydb
-from app.scripts.ClsPasswordHandler import PasswordHandler
-from app.scripts.ClsTokenHandler import TokenHandler
+from app.schema.AuthSchema import AuthSchema, SignupSchema
+from app.controller.DBConn import mydb
+from app.controller.ClsPasswordHandler import PasswordHandler
+from app.controller.ClsTokenHandler import TokenHandler
+from app.util.ClsJwtBearer import JWTBearer, get_token_user
 
 log = logging.getLogger("asyncio")
 router = APIRouter()
@@ -31,11 +32,11 @@ def get_collection(db):
     description="Sign Up",
     status_code=status.HTTP_201_CREATED,
 )
-def sign_up(schema: AuthSchema):
+def sign_up(schema: SignupSchema):
     log.info("Starting Sign up")
 
-    password_handler = PasswordHandler(schema.email, schema.password, mydb)
-    result = password_handler.sign_up()
+    password_handler = PasswordHandler(schema.email.lower(), schema.password, mydb)
+    result = password_handler.sign_up(schema.Role)
 
     log.info("Server.sign_up finished!")
     return result
@@ -50,7 +51,7 @@ def sign_up(schema: AuthSchema):
 def log_in(schema: AuthSchema):
     log.info("Starting Log in")
 
-    password_handler = PasswordHandler(schema.email, schema.password, mydb)
+    password_handler = PasswordHandler(schema.email.lower(), schema.password, mydb)
     result = password_handler.log_in()
 
     log.info("Server.log_in finished!")
@@ -66,8 +67,22 @@ def log_in(schema: AuthSchema):
 def get_token(schema: AuthSchema):
     log.info("getting token")
 
-    token_handler = TokenHandler(schema.email, schema.password, mydb)
+    token_handler = TokenHandler(schema.email.lower(), schema.password, mydb)
     token = token_handler.signJWT()
 
     log.info("Server.get_token finished!")
     return token
+
+@router.get(
+    "/Get Roles",
+    dependencies=[Depends(JWTBearer())],
+    summary="Get All Roles",
+    description="Get All Roles",
+    status_code=status.HTTP_201_CREATED,
+)
+def get_user_roles(token=Depends((JWTBearer()))):
+    log.info("Getting Bets")
+    user = get_token_user(token)
+
+    log.info("Server.get_all_bets finished!")
+    return user

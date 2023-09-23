@@ -1,7 +1,6 @@
-from app.scripts.ClsPasswordHandler import PasswordHandler
+from app.controller.ClsPasswordHandler import PasswordHandler
 import time
-from typing import Dict
-
+from fastapi import HTTPException
 import jwt
 from app.config.Config import settings
 
@@ -15,14 +14,13 @@ def decodeJWT(self, token: str) -> dict:
 
 class TokenHandler:
     def __init__(self, email: str, password: str, mydb):
-        self.password_handler = PasswordHandler(email, password,mydb)
+        self.password_handler = PasswordHandler(email, password, mydb)
         self.jwt_secret = settings.jwt_secret
         self.jwt_algorithm = settings.jwt_algorithm
         self.duration = 600
 
     def signJWT(self):
-        if self.password_handler.log_in() != "Log in successful":
-            return "Invalid grant"
+        self.password_handler.log_in()
 
         payload = {
             "Email": self.password_handler.client.email,
