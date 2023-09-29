@@ -1,0 +1,18 @@
+{
+    "Title" : "",
+    "Effort/Duration" : "",
+    "Cost" : "",
+    "About This Course" : "",
+    "What you learn" : "",
+    "Training Overview" : [""],
+    "Bonuses" : [
+        ""
+        ],
+    "Prerequisites" : "",
+    "Instructors" : [
+        ""
+    ],
+    "Reviews" : [
+        ""
+    ]
+}

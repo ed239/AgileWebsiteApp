@@ -84,5 +84,5 @@ def get_user_roles(token=Depends((JWTBearer()))):
     log.info("Getting Bets")
     user = get_token_user(token)
 
-    log.info("Server.get_all_bets finished!")
+    log.info("Server.get_role finished!")
     return user

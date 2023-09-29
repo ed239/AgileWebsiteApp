@@ -23,7 +23,7 @@ class PasswordHandler:
 
     def sign_up(self, role):
         if not self.signup_condition():
-            return "Email already exist, please try sign in"
+            HTTPException(status_code=403, detail="Email already exist")
 
         payload = {"Email":self.client.email,
                    "Password":self.client.encoded_password,
