@@ -1,6 +1,9 @@
 import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { Menu, MenuButton, MenuList, MenuItem } from "@reach/menu-button";
 import CustomLink from "./Navbar"
+import './styles.css'
+
+
 export default function CategoryDropdown(props) {
   let { title } = props;
 
@@ -9,6 +12,7 @@ export default function CategoryDropdown(props) {
   let [isOpen, setIsOpen] = useState();
   let [isTouchInput, setIsTouchInput] = useState();
   let [hasClicked, setHasClicked] = useState();
+  let [onHover, setHover] = useState();
   let button = useRef(null);
 
   useLayoutEffect(() => {
@@ -28,7 +32,7 @@ export default function CategoryDropdown(props) {
 
   return (
     <Menu>
-      <MenuButton
+      <MenuButton class="MenuButton"
         ref={button}
         onTouchStart={() => {
           setIsTouchInput(true);
@@ -47,7 +51,7 @@ export default function CategoryDropdown(props) {
           setIsOpen(!isOpen);
         }}
       >
-        <span>{title}</span> 
+        <span>{title}</span> <span aria-hidden>▾</span>
       </MenuButton>
       <MenuList
         onMouseEnter={event => {

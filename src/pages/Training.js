@@ -1,4 +1,7 @@
+
 export default function Training(){
-    return <h1>Training</h1>
+    return (
+        <h1>Training</h1>
+    )
 
 }

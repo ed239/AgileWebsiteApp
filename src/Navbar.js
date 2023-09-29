@@ -1,6 +1,6 @@
 
 
-//import HoverMenuButton from "./HoverMenuButton";
+import HoverMenuButton from "./HoverMenuButton";
 import { Link, useMatch, useResolvedPath } from "react-router-dom"
 export default function Navbar(){
     
@@ -8,7 +8,7 @@ export default function Navbar(){
         <Link to="/" className="site-title">Logo</Link>
         <ul>
             <CustomLink to="assessment">Assessment</CustomLink>
-            <CustomLink to="training">Training</CustomLink>
+            <CustomLink to="training"><HoverMenuButton title="Training" /></CustomLink>
             <CustomLink to="coaching">Coaching</CustomLink>
             <CustomLink to="resources">Resources</CustomLink>
         </ul>

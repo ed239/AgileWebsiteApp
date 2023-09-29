@@ -1,4 +1,12 @@
+import './pages.css'
+
 export default function Assessment(){
-    return <h1>Assessment</h1>
+
+    return (
+    <body class="body">
+        <h1>Assessment</h1>
+
+    </body>
+    )
 
 }
