@@ -88,10 +88,6 @@ def get_owned_courses(token=Depends((JWTBearer()))):
     course_service = CourseServicer(mydb)
     owned_courses = course_service.owned_courses(email)
 
-<<<<<<< Updated upstream
-    log.info("Server.get_all_bets finished!")
-    return user
-=======
     log.info("Server.get_owned_courses finished!")
     return owned_courses
 
@@ -125,4 +121,4 @@ def get_all_courses():
 
     log.info("Server.get_all_courses finished!")
     return all_courses
->>>>>>> Stashed changes
+
