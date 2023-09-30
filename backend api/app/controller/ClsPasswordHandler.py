@@ -21,13 +21,13 @@ class PasswordHandler:
         else:
             return False
 
-    def sign_up(self, role):
+    def sign_up(self, courses):
         if not self.signup_condition():
             return "Email already exist, please try sign in"
 
         payload = {"Email":self.client.email,
                    "Password":self.client.encoded_password,
-                   "Role": role
+                   "Courses": courses
                    }
 
 

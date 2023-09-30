@@ -9,7 +9,7 @@ class AuthSchema(BaseModel):
 class SignupSchema(BaseModel):
     email: str
     password: str
-    Role: List[str]
+    courses: List[str]
 
 
 
