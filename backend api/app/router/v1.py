@@ -115,10 +115,24 @@ def add_courses(schema: AddCourseSchema, token=Depends((JWTBearer()))):
     status_code=status.HTTP_201_CREATED,
 )
 def get_all_courses():
-    log.info("Getting Bets")
+    log.info("Getting all courses")
     course_service = CourseServicer(mydb)
     all_courses = course_service.all_courses()
 
     log.info("Server.get_all_courses finished!")
     return all_courses
+
+@router.get(
+    "/get-course-info",
+    summary="Get course info",
+    description="Get course info",
+    status_code=status.HTTP_201_CREATED,
+)
+def get_course_info(course: str):
+    log.info(f"Getting {course} info")
+    course_service = CourseServicer(mydb)
+    course_info = course_service.get_course_info(course)
+
+    log.info("Server.get_course_info finished!")
+    return course_info
 

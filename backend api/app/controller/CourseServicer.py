@@ -46,3 +46,25 @@ class CourseServicer:
         self.auth_col.update_one(update_query, update, upsert=False)
         return courses
 
+    def get_course_info(self, course):
+        myquery = [{"$match": {"Title": course}},
+                   {"$project": {
+                       "_id": 0,
+                       "Title": 1,
+                       "Effort/Duration": 1,
+                       "Cost": 1,
+                       "About This Course": 1,
+                       "What you learn": 1,
+                       "Training Overview": 1,
+                       "Bonuses": 1,
+                       "Prerequisites": 1,
+                       "Instructors": 1,
+                       "Reviews": 1
+                   }}]
+        mycursor = self.course_col.aggregate(myquery)
+        mylist = next(mycursor, None)
+        if not mylist:
+            raise HTTPException(status_code=403, detail="Course title not found")
+
+        return mylist
+

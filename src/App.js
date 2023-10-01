@@ -11,6 +11,7 @@ import AboutUs from './pages/AboutUs';
 import BecomeTrainer from './pages/BecomeTrainer';
 import ContactUs from './pages/ContactUs'
 import Terms from './pages/Terms'
+// import Sample from './pages/Sample'
 import { Route, Routes} from "react-router-dom"
 
 // function App() {
@@ -49,6 +50,7 @@ function App(){
           <Route path="/contactus" element={<ContactUs />} />
           <Route path="/becometrainer" element={<BecomeTrainer />} />
           <Route path="/terms" element={<Terms />} />
+          {/* <Route path="/sample" element={<Sample />} /> */}
         </Routes>
       <Footer />
       </div>
