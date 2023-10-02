@@ -51,6 +51,7 @@ function App(){
           <Route path="/contactus" element={<ContactUs />} />
           <Route path="/becometrainer" element={<BecomeTrainer />} />
           <Route path="/terms" element={<Terms />} />
+          {/* <Route path="/sample" element={<Sample />} /> */}
         </Routes>
       <Footer />
       </div>

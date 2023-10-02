@@ -4,9 +4,11 @@ from importlib import import_module
 from app.config.Config import settings, module_dir
 from fastapi import APIRouter, Depends, status
 from app.schema.AuthSchema import AuthSchema, SignupSchema
+from app.schema.CourseSchema import AddCourseSchema
 from app.controller.DBConn import mydb
 from app.controller.ClsPasswordHandler import PasswordHandler
 from app.controller.ClsTokenHandler import TokenHandler
+from app.controller.CourseServicer import CourseServicer
 from app.util.ClsJwtBearer import JWTBearer, get_token_user
 
 log = logging.getLogger("asyncio")
@@ -36,7 +38,7 @@ def sign_up(schema: SignupSchema):
     log.info("Starting Sign up")
 
     password_handler = PasswordHandler(schema.email.lower(), schema.password, mydb)
-    result = password_handler.sign_up(schema.Role)
+    result = password_handler.sign_up(schema.courses)
 
     log.info("Server.sign_up finished!")
     return result
@@ -74,15 +76,63 @@ def get_token(schema: AuthSchema):
     return token
 
 @router.get(
-    "/Get Roles",
+    "/owned-courses",
     dependencies=[Depends(JWTBearer())],
-    summary="Get All Roles",
-    description="Get All Roles",
+    summary="Get Owned Courses",
+    description="Get Owned Courses",
     status_code=status.HTTP_201_CREATED,
 )
-def get_user_roles(token=Depends((JWTBearer()))):
-    log.info("Getting Bets")
-    user = get_token_user(token)
+def get_owned_courses(token=Depends((JWTBearer()))):
+    log.info("Getting Owned Courses")
+    email = get_token_user(token)
+    course_service = CourseServicer(mydb)
+    owned_courses = course_service.owned_courses(email)
 
-    log.info("Server.get_all_bets finished!")
-    return user
+    log.info("Server.get_owned_courses finished!")
+    return owned_courses
+
+@router.post(
+    "/add-courses",
+    dependencies=[Depends(JWTBearer())],
+    summary="Add New Courses",
+    description="Add New Courses",
+    status_code=status.HTTP_201_CREATED,
+)
+def add_courses(schema: AddCourseSchema, token=Depends((JWTBearer()))):
+    log.info("add courses")
+    email = get_token_user(token)
+    course_service = CourseServicer(mydb)
+    owned_courses = course_service.add_course(email, schema.courses)
+
+    log.info("Server.add_courses finished!")
+    return owned_courses
+
+
+@router.get(
+    "/all-courses",
+    summary="Get all Courses",
+    description="Get all Courses",
+    status_code=status.HTTP_201_CREATED,
+)
+def get_all_courses():
+    log.info("Getting all courses")
+    course_service = CourseServicer(mydb)
+    all_courses = course_service.all_courses()
+
+    log.info("Server.get_all_courses finished!")
+    return all_courses
+
+@router.get(
+    "/get-course-info",
+    summary="Get course info",
+    description="Get course info",
+    status_code=status.HTTP_201_CREATED,
+)
+def get_course_info(course: str):
+    log.info(f"Getting {course} info")
+    course_service = CourseServicer(mydb)
+    course_info = course_service.get_course_info(course)
+
+    log.info("Server.get_course_info finished!")
+    return course_info
+
