@@ -11,6 +11,7 @@ import AboutUs from './pages/AboutUs';
 import BecomeTrainer from './pages/BecomeTrainer';
 import ContactUs from './pages/ContactUs'
 import Terms from './pages/Terms'
+import NewCourses from './pages/NewCourses'
 import { Route, Routes} from "react-router-dom"
 
 // function App() {
@@ -45,6 +46,7 @@ function App(){
           <Route path="/training" element={<Training />} />
           <Route path="/coaching" element={<Coaching />} />
           <Route path="/resources" element={<Resources />} />
+          <Route path="/newcourses" element={<NewCourses />} />
           <Route path="/aboutus" element={<AboutUs />} />
           <Route path="/contactus" element={<ContactUs />} />
           <Route path="/becometrainer" element={<BecomeTrainer />} />

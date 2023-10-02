@@ -11,6 +11,7 @@ export default function Navbar(){
             <CustomLink to="training"><HoverMenuButton title="Training" /></CustomLink>
             <CustomLink to="coaching">Coaching</CustomLink>
             <CustomLink to="resources">Resources</CustomLink>
+            <CustomLink to="newcourses">New Courses</CustomLink>
         </ul>
     </nav>
 }
