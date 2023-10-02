@@ -5,7 +5,7 @@ import { Link, useMatch, useResolvedPath } from "react-router-dom"
 export default function Navbar(){
     
     return <nav className="nav">
-        <Link to="/" className="site-title">Logo</Link>
+        <Link to="/" ><img className="logo" src="https://cdn-icons-png.flaticon.com/512/46/46707.png" ></img></Link>
         <ul>
             <CustomLink to="assessment">Assessment</CustomLink>
             <CustomLink to="training"><HoverMenuButton title="Training" /></CustomLink>

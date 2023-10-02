@@ -57,6 +57,12 @@ body{
     font-size: 2rem;
 }
 
+.logo {
+    width: 5rem;
+    height: 5rem;
+    margin-left: 4rem;
+}
+
 .foot-title {
     font-size: 2rem;
 }
