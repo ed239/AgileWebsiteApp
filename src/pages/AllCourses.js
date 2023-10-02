@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 
-function Sample() {
+function AllCourses() {
   const [courses, setCourses] = useState([]);
-//Example of calling all-courses endpoint
+
+//Example with error handling
   const fetchCourses = () => {
     fetch('http://localhost:5000/authentication-swagger/v1/all-courses', {
       method: 'GET',
@@ -20,17 +21,19 @@ function Sample() {
     .catch(error => console.error('Error fetching courses:', error));
   };
 
+
+//Test rendering
   return (
     <div>
       <button onClick={fetchCourses}>Load Courses</button>
       
       <div id="mylist">
         {courses.map((course, index) => (
-          <div key={index}>{course.name}</div> // Assuming each course has a property called 'name'
+          <div key={index}>{course}</div> 
         ))}
       </div>
     </div>
   );
 }
 
-export default Sample;
+export default AllCourses;
