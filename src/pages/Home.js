@@ -4,8 +4,34 @@ import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import Carousel, { CarouselItem } from "./carousel";
 import "./carousel.css"
+import { Checkbox } from '@mui/material';
+import { FormControlLabel } from '@mui/material';
+import { FormGroup } from '@mui/material';
+
 
 export default function Home(){
+    const sliderRef = useRef(null);
+  const scrollAmount = 100;
+  const images = [
+    {
+      id: 1,
+      url: "https://source.unsplash.com/300x300/?perth,australia",
+      text:"hello hberfrbbcoajnfljneflnerf"
+    },
+    {
+      id: 2,
+      url: "https://source.unsplash.com/300x300/?west-australia",
+      text:"hello hberfrbbcoajnfljneflnerf"
+    },
+    {
+      id: 3,
+      url: "https://source.unsplash.com/300x300/?perth"
+    },
+    {
+      id: 4,
+      url: "https://source.unsplash.com/300x300/?quokka,perth"
+    }
+  ];
     
     return (
         
@@ -76,6 +102,20 @@ export default function Home(){
         </div>
         <br></br>
         <br></br>
+        <div class = "rowb">
+            <div class="fbutton">
+                <button class="btnf">Collaborate</button>
+            </div>
+            <div class="fbutton">
+                <button class="btnf">Schedule an Assessment</button>
+            </div>
+            <div class="fbutton">
+                <button class="btnf">View Courses</button>
+            </div>
+            <div class="fbutton">
+                <button class="btnf">Our Offerings</button>
+            </div>
+        </div>
 
         <div class='some-page-wrapper'>
             <div class='row2'>
@@ -90,6 +130,19 @@ export default function Home(){
                     methodologies, adapted our learning to the rapid  development approaches, and graduated to Agile. Wherever you are in your software evolution,  
                     we are there to help in your journey.
                     </p>
+                    <br></br>
+                    <br></br>
+                    <div class = "rowb">
+                        <div class="fbutton">
+                            <button class="btnf">Who We Are</button>
+                        </div>
+                        <div class="fbutton">
+                            <button class="btnf">What We Do</button>
+                        </div>
+                        <div class="fbutton">
+                            <button class="btnf">Contact Us</button>
+                         </div>
+                    </div>
                 </div>
                 </div>
                 <div class='column'>
@@ -115,7 +168,7 @@ export default function Home(){
                     <h3>SAFe</h3>
                     <br></br>
                     <img class='partnerImg' src='https://images.credly.com/images/7a30a2e5-82bb-406b-b0f8-52fd846eac69/linkedin_thumb_cert_mark_SSM_badge_large_300px.png'></img>
-                    <br></br>
+                    
                 </div>
                 </div>
                 <div class='column'>
@@ -124,7 +177,7 @@ export default function Home(){
                     <h3>Scrum Alliance</h3>
                     <br></br>
                     <img class='partnerImg' src='https://theme.zdassets.com/theme_assets/67158/c28adb2e3532619ebc9a9072599677f56ebee94b.png'></img>
-                    <br></br>
+                    
                 </div>
                 </div>
                 <div class='column'>
@@ -133,12 +186,73 @@ export default function Home(){
                     <h3>Scrum.org</h3>
                     <br></br>
                     <img class='partnerImg' src='https://devon.global/wp-content/uploads/2018/11/scrumorg-logo.png'></img>
-                    <br></br>
                 </div>
                 </div>
             </div>
         </div>
-        
+
+
+        <h1>Get Inspired</h1>
+        <br></br>
+        <br></br>
+
+        <div className="App">
+        <button
+            className="nav-btn"
+            onClick={() => {
+            const container = sliderRef.current;
+            container.scrollLeft -= scrollAmount;
+            }}
+        >
+            <ChevronLeftIcon />
+        </button>
+        <div className="images-container" ref={sliderRef}>
+            {images.map((image) => {
+            return (
+                <img
+                className="image"
+                alt="sliderImage"
+                key={image?.id}
+                src={image?.url}
+                />
+            );
+            })}
+        </div>
+        <button
+            className="nav-btn"
+            onClick={() => {
+            const container = sliderRef.current;
+            container.scrollLeft += scrollAmount;
+            }}
+        >
+        <ChevronRightIcon />
+      </button>
+    </div>
+    <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
+    <div className="rowLast">
+        <h1>Stay Connected With Us</h1>
+        <br></br>
+        <h3>Recieve Information About Upcoming Workshops and Insights</h3>
+        <div className="App2">
+        <form>
+            <div className="input-group">
+            <label htmlFor="name">Name</label>
+            <input type="text" id="name" />
+            </div>
+            <div className="input-group">
+            <label htmlFor="email">Email</label>
+            <input type="email" id="email" />
+            </div>
+        </form>
+        </div>
+        <FormGroup class="checkbox">
+            <FormControlLabel control={<Checkbox defaultChecked />} label="I agree to recieve sponsored emails" />
+        </FormGroup>
+        <button type="submit" className="submit-btn">Sign Up</button>
+    </div>
         
         
 
