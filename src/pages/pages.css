@@ -285,6 +285,45 @@
     border: none;
   }
 
+  /* About Us Page */
+
+  .grey-columnAU {
+    background-color: white;
+    height: 350px;
+    width: 45%;
+    border-radius: 15%;
+    padding-left:2rem;
+    padding-right:1rem;
+    justify-content: left;
+    text-align: left;
+    margin-bottom: 3rem;
+  }
+  .AUimg {
+    background-color: white;
+    height: 350px;
+    width: 100%;
+    border-radius: 10%;
+    padding-left:2rem;
+    padding-right:1rem;
+    justify-content: left;
+    text-align: left;
+    margin-bottom: 3rem;
+    margin-top:3rem;
+  }
+  .AUimg2 {
+    background-color: white;
+    height: 300px;
+    width: 100%;
+    border-radius: 10%;
+    padding-left:2rem;
+    padding-right:1rem;
+    justify-content: left;
+    text-align: left;
+    margin-bottom: 6rem;
+    margin-top:3rem;
+  }
+
+
   
   
 
