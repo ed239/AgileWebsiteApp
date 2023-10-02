@@ -12,6 +12,10 @@ import BecomeTrainer from './pages/BecomeTrainer';
 import ContactUs from './pages/ContactUs'
 import Terms from './pages/Terms'
 import NewCourses from './pages/NewCourses'
+//request samples
+import AllCourses from './pages/AllCourses'
+import Login from './pages/Login';
+
 import { Route, Routes} from "react-router-dom"
 
 // function App() {
@@ -51,7 +55,8 @@ function App(){
           <Route path="/contactus" element={<ContactUs />} />
           <Route path="/becometrainer" element={<BecomeTrainer />} />
           <Route path="/terms" element={<Terms />} />
-          {/* <Route path="/sample" element={<Sample />} /> */}
+          <Route path="/allCourses" element={<AllCourses />} />
+          <Route path="/login" element={<Login />} />
         </Routes>
       <Footer />
       </div>
