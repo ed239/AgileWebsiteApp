@@ -38,14 +38,15 @@ export default function CategoryDropdown(props) {
           setIsTouchInput(true);
         }}
         onMouseEnter={event => {
-          setIsOverButton(true);
+          setIsOverButton(false);
         }}
         onMouseLeave={event => {
           setIsOverButton(false);
         }}
         onClick={() => {
-          setHasClicked(true);
+          setHasClicked(false);
           setIsOpen(!isOpen);
+          
         }}
         onKeyDown={() => {
           setIsOpen(!isOpen);

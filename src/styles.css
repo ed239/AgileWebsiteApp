@@ -25,6 +25,7 @@ body{
  .foot {
     background-color: rgb(47, 218, 141);
     color: black;
+    margin-top: 0rem;
  }
 
  .foot ul{

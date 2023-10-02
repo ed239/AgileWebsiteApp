@@ -7,10 +7,21 @@ import "./carousel.css"
 import { Checkbox } from '@mui/material';
 import { FormControlLabel } from '@mui/material';
 import { FormGroup } from '@mui/material';
+import {Routes, Route, useNavigate} from 'react-router-dom';
 
 
 export default function Home(){
-    const sliderRef = useRef(null);
+    const navigate = useNavigate();
+
+    const navigateToContactUs = () => {
+      // 👇️ navigate to /contacts
+      navigate('/ContactUs');
+    };
+    const navigateToAboutUs = () => {
+        // 👇️ navigate to /contacts
+        navigate('/AboutUs');
+      };
+  const sliderRef = useRef(null);
   const scrollAmount = 100;
   const images = [
     {
@@ -104,10 +115,10 @@ export default function Home(){
         <br></br>
         <div class = "rowb">
             <div class="fbutton">
-                <button class="btnf">Collaborate</button>
+                <button class="btnf" onClick={navigateToContactUs}>Collaborate</button>
             </div>
             <div class="fbutton">
-                <button class="btnf">Schedule an Assessment</button>
+                <button class="btnf" onClick={navigateToContactUs}>Schedule an Assessment</button>
             </div>
             <div class="fbutton">
                 <button class="btnf">View Courses</button>
@@ -134,13 +145,13 @@ export default function Home(){
                     <br></br>
                     <div class = "rowb">
                         <div class="fbutton">
-                            <button class="btnf">Who We Are</button>
+                            <button class="btnf" onClick={navigateToAboutUs}>Who We Are</button>
                         </div>
                         <div class="fbutton">
-                            <button class="btnf">What We Do</button>
+                            <button class="btnf"onClick={navigateToAboutUs}>What We Do</button>
                         </div>
                         <div class="fbutton">
-                            <button class="btnf">Contact Us</button>
+                            <button class="btnf"onClick={navigateToContactUs}>Contact Us</button>
                          </div>
                     </div>
                 </div>
