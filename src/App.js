@@ -13,10 +13,10 @@ import ContactUs from './pages/ContactUs'
 import Terms from './pages/Terms'
 import NewCourses from './pages/NewCourses'
 //request samples
-import AllCourses from './pages/AllCourses'
+import GetCourse from './pages/GetCourse'
 import Login from './pages/Login';
 
-import { Route, Routes} from "react-router-dom"
+import { Route, Routes, BrowserRouter as Router} from "react-router-dom"
 
 // function App() {
 //   return (
@@ -55,7 +55,7 @@ function App(){
           <Route path="/contactus" element={<ContactUs />} />
           <Route path="/becometrainer" element={<BecomeTrainer />} />
           <Route path="/terms" element={<Terms />} />
-          <Route path="/allCourses" element={<AllCourses />} />
+          <Route path="/getCourse/:courseName" element={<GetCourse />} />
           <Route path="/login" element={<Login />} />
         </Routes>
       <Footer />
