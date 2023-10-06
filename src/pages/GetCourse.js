@@ -35,10 +35,10 @@ function GetCourse() {
     <div>      
       <div>
       <h1>{course.Title}</h1>
+      <p>About This Course: {course["About This Course"]}</p>
       <p>Effort/Duration: {course["Effort/Duration"]} days</p>
       <p>Cost: ${course["Cost"]}</p>
-      <p>About This Course: {course["About This Course"]}</p>
-      <p>What you learn: {course["What you learn"]}</p>
+      <p>What you learn: {course["What You’ll Learn"]}</p>
 
       <h2>Training Overview</h2>
       <ul>
@@ -47,26 +47,18 @@ function GetCourse() {
         ))}
       </ul>
 
-      <h2>Bonuses</h2>
-      <ul>
-        {course["Bonuses"].map((bonus, index) => (
-          <li key={index}>{bonus}</li>
-        ))}
-      </ul>
-
-      <p>Prerequisites: {course["Prerequisites"]}</p>
 
       <h2>Instructors</h2>
       <ul>
-        {course["Instructors"].map((instructor, index) => (
-          <li key={index}>{instructor}</li>
+        {course["Meet the Instructors"].map((instructor, index) => (
+          <li key={index}>-{instructor}</li>
         ))}
       </ul>
 
       <h2>Reviews</h2>
       <ul>
         {course["Reviews"].map((review, index) => (
-          <li key={index}>{review}</li>
+          <li key={index}>{'\u2B24'}{review}</li>
         ))}
       </ul>
 
