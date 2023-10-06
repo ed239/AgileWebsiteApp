@@ -11,7 +11,7 @@
             "program": "backend api/app/main.py",
             "console": "integratedTerminal",
             "envFile": "backend api/.env",
-            "pythonPath": "C:/Users/tim.zhang/anaconda3/python.exe" // adjust this path
+            "python": "C:/Users/tim.zhang/anaconda3/python.exe" // adjust this path
           }
     ]
 }

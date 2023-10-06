@@ -320,6 +320,31 @@
     margin-top:3rem;
   }
 
+  .flex-container {
+    display: flex;
+    align-items: left;
+    height: 100vh;
+  }
+
+  .flex-div {
+    flex: 1;
+    background-color: white;
+    height: 350px;
+    width: 45%;
+    border-radius: 15%;
+    padding-left:5rem;
+    padding-right:10rem;
+    padding: 1rem;
+    justify-content: left;
+    text-align: left;
+    margin-bottom: 3rem;
+  }
+
+  .vertical-separator {
+    border-left: 1px solid #000;
+    height: 80%;
+    margin: 0 10px;
+  }
 /* TRAINING PAGE */
 .bodyT {
   background-color: beige;
