@@ -46,6 +46,7 @@ export default function AboutUs(){
                 <div class='grey-columnAU'>
                         <br></br>
                         <br></br>
+                        <br></br>
                         <h2>What We Do</h2>
                         <br></br>
                         <h4>Apex can help you succeed in three ways: </h4>
