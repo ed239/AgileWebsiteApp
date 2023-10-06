@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate} from 'react-router-dom';
 
 function GetCourse() {
+  const navigate = useNavigate();
   const { courseName } = useParams();
   const encodedCourse = encodeURIComponent(courseName);
   const fullURL = 'http://localhost:5000/authentication-swagger/v1/get-course-info?course=' + encodedCourse;
@@ -26,46 +27,69 @@ function GetCourse() {
       setLoading(false);
     });
   }
+
+  const storeCourseName = () => {
+    sessionStorage.setItem('title', course.Title);
+    navigate('/Register');
+  };
   
 
 
   if (loading) return (<div>Loading...</div>);
 
   return (
-    <div>      
-      <div>
-      <h1>{course.Title}</h1>
-      <p>About This Course: {course["About This Course"]}</p>
-      <p>Effort/Duration: {course["Effort/Duration"]} days</p>
-      <p>Cost: ${course["Cost"]}</p>
-      <p>What you learn: {course["What You’ll Learn"]}</p>
+    <div>  
+      <h1>{course.Title}</h1>   
+      <br></br>
+      <br></br>
+      <button type="submit" className="submit-btn" onClick={storeCourseName}>Register</button>
+      <div class='flex-container'>  
+        <div class='flex-div'>
+          <h2>About This Course: </h2>
+          <div>{course["About This Course"]}</div>
+          <br></br>
+          <h2>What you learn</h2>
+          <div>{course["What You’ll Learn"]}</div>
+          <br></br>
+          <h2>Training Overview</h2>
+          <ul style={{marginLeft: '2.1em'}}>
+            {course["Training Overview"].map((item, index) => (
+              <li key={index}>{item}</li>
+            ))}
+          </ul>
+          <br></br>
+          <br></br>
+          <h2>Instructors</h2>
+          <ul style={{marginLeft: '2.1em'}}>
+            {course["Meet the Instructors"].map((instructor, index) => (
+              <li key={index}>{instructor}</li>
+            ))}
+          </ul>
+        </div>
 
-      <h2>Training Overview</h2>
-      <ul>
-        {course["Training Overview"].map((item, index) => (
-          <li key={index}>{item}</li>
-        ))}
-      </ul>
+        <div class='vertical-separator' />
 
 
-      <h2>Instructors</h2>
-      <ul>
-        {course["Meet the Instructors"].map((instructor, index) => (
-          <li key={index}>-{instructor}</li>
-        ))}
-      </ul>
-
-      <h2>Reviews</h2>
-      <ul>
-        {course["Reviews"].map((review, index) => (
-          <li key={index}>{'\u2B24'}{review}</li>
-        ))}
-      </ul>
-
-      
+        <div class='flex-div'>
+          <h2>Length: </h2>
+          <div>Effort/Duration: {course["Effort/Duration"]} days</div>
+          <div>Cost: ${course["Cost"]}</div>
+          <br></br>
+          <br></br>
+          <h2>Reviews</h2>
+          <ul style={{marginLeft: '2.1em'}}>
+            {course["Reviews"].map((review, index) => (
+              <li key={index}>{review}</li>
+            ))}
+          </ul>
+        </div>     
+      </div>
+      <button type="submit" className="submit-btn" onClick={storeCourseName}>Register</button>
     </div>
-    </div>
+    
+    
   );
 }
+
 
 export default GetCourse;
