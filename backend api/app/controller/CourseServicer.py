@@ -54,11 +54,11 @@ class CourseServicer:
                        "Effort/Duration": 1,
                        "Cost": 1,
                        "About This Course": 1,
-                       "What you learn": 1,
+                       "What You’ll Learn": 1,
                        "Training Overview": 1,
                        "Bonuses": 1,
                        "Prerequisites": 1,
-                       "Instructors": 1,
+                       "Meet the Instructors": 1,
                        "Reviews": 1
                    }}]
         mycursor = self.course_col.aggregate(myquery)
