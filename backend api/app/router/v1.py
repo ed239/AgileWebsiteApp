@@ -118,6 +118,7 @@ def get_all_courses():
     log.info("Getting all courses")
     course_service = CourseServicer(mydb)
     all_courses = course_service.all_courses()
+    print(all_courses)
 
     log.info("Server.get_all_courses finished!")
     return all_courses
