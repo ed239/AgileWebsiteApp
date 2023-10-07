@@ -385,8 +385,60 @@
   margin-top: 1rem;
 }
 
+.assessment-main-img{
+  padding: 20px 0px 50px 0px;
+  background-image: url(https://plus.unsplash.com/premium_photo-1680807869086-e08309acfb24?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8YXNzZXNzbWVudHxlbnwwfHwwfHx8MA%3D%3D&w=1000&q=80);
+  width: 1400px; 
+  height: 600px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  margin: auto;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 15px 30px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  margin-bottom: 50px;
+}
 
+.ctu-btn{
+    background-color: black;
+    color: white;
+    border: none;
+    font-size: 20px;
+    padding: 1.5rem;
+    border-radius: 0px;
+    margin: 0px;
+    cursor: pointer;
+}
 
-  
+.assessment-content{
+  text-align: left;
+  margin: 20px 7%;
+}
+.ass-content p,ul{
+  margin: 20px 50px;
+}
+.ass-content h1{
+  font-size: 50px;
+}
+.ass-content p{
+  font-size: 25px;
+  letter-spacing:0.1ch;
+}
+.ass-content li{
+  font-size: 35px;
+  font-weight: 600;
+  margin: 30px;
+  text-decoration: underline;
+}
+.ass-content-2 li.ass-titles::marker{
+  color: #000;
+}
+
+.b-ctu-btn{
+  margin: 50px 0px;
+}
   
 
