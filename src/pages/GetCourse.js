@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useParams, useNavigate} from 'react-router-dom';
+import './pages.css'
 
 function GetCourse() {
   const navigate = useNavigate();
