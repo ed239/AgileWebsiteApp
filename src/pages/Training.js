@@ -37,7 +37,9 @@ export default function Training(){
                 <Link to="/getcourse/Certified SAFe® Program Consultant">
                     <img class="imgT2" src = "https://images.credly.com/images/62aa8553-6e1e-46de-a7f1-ded65844a474/cert_mark_SPC_badge.png"></img>
                 </Link>
-                <img class="imgT" src = "https://images.credly.com/images/db290fc4-ca36-485e-aafe-47fd33158899/twitter_thumb_201604_cert_mark_SASM_badge.png"></img>
+                <Link to="/getcourse/Certified SAFe® Advanced Scrum Master">
+                <img class="imgT2" src = "https://images.credly.com/images/db290fc4-ca36-485e-aafe-47fd33158899/twitter_thumb_201604_cert_mark_SASM_badge.png"></img>
+                </Link>
                 <Link to="/getcourse/Certified SAFe® DevOps Practitioner">
                     <img class="imgT2" src = "https://images.credly.com/images/e38c659f-8492-4869-b8da-e17c438934df/twitter_thumb_201604_cert_mark_SDP_badge.png"></img>
                 </Link>
@@ -66,7 +68,9 @@ export default function Training(){
                 <h3>Scrum.org</h3>
             </div>
             <div class="rowT">
-                <img class="imgT" src="https://scrumorg-website-prod.s3.amazonaws.com/drupal/inline-images/2022-09/asset_44psmi_0.png"></img>
+                <Link to="/getcourse/Professional Scrum Master Training">
+                    <img class="imgT2" src="https://scrumorg-website-prod.s3.amazonaws.com/drupal/inline-images/2022-09/asset_44psmi_0.png"></img>
+                </Link>
                 <Link to="/getcourse/Professional Scrum Product Owner">
                     <img class="imgT2" src="https://uploads-ssl.webflow.com/5ecfd11578751ae592c82302/63ee4a9c7a40d11298940ca1_PSPO1-professional-Product-Owner1-certificate-badge-by-scrum-org.png"></img>
                 </Link>
@@ -80,9 +84,9 @@ export default function Training(){
                 <h3>Scrum Alliance</h3>
             </div>
             <div class="rowT">
-                
-                    <img class="imgT" src="https://i0.wp.com/edinburghagile.com/wp-content/uploads/2020/08/Certified-Scrum-Master-Badge.png?fit=625%2C561&ssl=1"></img>
-                
+                <Link to="/getcourse/CSM – Certified ScrumMaster® (scrumalliance.org)">
+                    <img class="imgT2" src="https://i0.wp.com/edinburghagile.com/wp-content/uploads/2020/08/Certified-Scrum-Master-Badge.png?fit=625%2C561&ssl=1"></img>
+                </Link>                
                 <Link to="/getcourse/CSPO - Certified Scrum Product Owner">
                     <img class="imgT2" src="https://www.scrumalliance.org/images/default-source/badges/sa_badge_cspo.png?sfvrsn=a4355b39_1"></img>
                 </Link>
