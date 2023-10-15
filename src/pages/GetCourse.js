@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useParams, useNavigate} from 'react-router-dom';
 import './pages.css'
+import imageMap from './ImageMap'
 
 function GetCourse() {
   const navigate = useNavigate();
@@ -33,17 +34,29 @@ function GetCourse() {
     sessionStorage.setItem('title', course.Title);
     navigate('/Register');
   };
+
+  const imageLink = () => {
+    const title = course.Title;
+    return imageMap[title]
+  };
   
 
 
   if (loading) return (<div>Loading...</div>);
 
   return (
-    <div class="body">  
-      <h1>{course.Title}</h1>   
+    <div class="course-container"> 
+      
+      <h1>
+        <div class="box">
+          <img class="imgT0" src={imageLink()}></img> 
+          <span class="course-header-text">{course.Title}</span>
+        </div>       
+      </h1>   
       <br></br>
       <br></br>
-      <button type="submit" className="submit-btn" onClick={storeCourseName}>Register</button>
+      
+      <button type="submit" className="register-btn" onClick={storeCourseName}>Register</button>
       <div class='flex-container'>  
         <div class='flex-div'>
           <h2>About This Course: </h2>
@@ -89,7 +102,7 @@ function GetCourse() {
           </ul>
         </div>     
       </div>
-      <button type="submit" className="submit-btn" onClick={storeCourseName}>Register</button>
+      <button type="submit" className="register-btn" onClick={storeCourseName}>Register</button>
     </div>
     
     
