@@ -108,8 +108,46 @@ export default function Training(){
                 </Link>
             </div>
 
-            <div class="rowT">
+            <div class="rowTF">
                 <h1>Corporate Training</h1>
+            </div>
+            <div class="rowT">
+                <Link to="/getcourse/Value Stream Corporate Workshop">
+                <div class="tbutton">
+                    <button class="btnt"><b>Value Stream <br></br> Workshop</b></button>
+                </div>
+                </Link>
+                <Link to="/getcourse/SAFe® Portfolio Management">
+                <div class="tbutton">
+                    <button class="btnt"><b>SAFe® Portfolio<br></br> Management</b></button>
+                </div>
+                </Link>
+                <Link to="/getcourse/Program Increment Workshop (customized offering)">
+                <div class="tbutton">
+                    <button class="btnt"><b> Program Increment<br></br> Workshop</b></button>
+                </div>
+                </Link>
+                <Link to="/getcourse/Inspect & Adapt (customized offering)">
+                <div class="tbutton">
+                    <button class="btnt"><b>Inspect & <br></br> Adapt</b></button>
+                </div>
+                </Link>
+                <Link to="/getcourse/Product Management Workshop (customized offering)">
+                <div class="tbutton">
+                    <button class="btnt"><b>Product Management<br></br> Workshop</b></button>
+                </div>
+                </Link>
+                <Link to="/getcourse/Team Building Workshop">
+                <div class="tbutton">
+                    <button class="btnt"><b>Team <br></br>Building</b></button>
+                </div>
+                </Link>
+                <Link to="/getcourse/Customized Scrum and Kanban Workshop">
+                <div class="tbutton">
+                    <button class="btnt"><b> Customized <br></br>Scrum/Kanban<br></br>Workshop</b></button>
+                </div>
+                </Link>
+
             </div>
 
 

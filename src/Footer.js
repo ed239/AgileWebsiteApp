@@ -11,10 +11,10 @@ import {
 export default function Footer(){
     
     return <nav className="foot">
-        <div id="grid">
+        <div id="grid0">
+        <Link to="/" ><img className="logo" src="https://cdn-icons-png.flaticon.com/512/46/46707.png" ></img></Link>
         
-        <Link to="/" className="foot-title">Logo</Link>
-        <ul>
+        <ul id="flinks">
             <CustomLink to="aboutus">About Us</CustomLink>
             <CustomLink to="contactus">Contact Us</CustomLink>
             <CustomLink to="becometrainer">Become a Trainer</CustomLink>
