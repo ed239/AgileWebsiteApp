@@ -9,6 +9,7 @@ function GetCourse() {
   const fullURL = 'http://localhost:5000/authentication-swagger/v1/get-course-info?course=' + encodedCourse;
   const [course, setCourse] = useState(null);
   const [loading, setLoading] = useState(true);
+  sessionStorage.setItem("image", "https://gedvillo.com/wp-content/uploads/2020/05/204f8e666371c25fc99a03470dbd6d58.png")
 
   if(loading){
     console.log("making request");
@@ -33,17 +34,28 @@ function GetCourse() {
     sessionStorage.setItem('title', course.Title);
     navigate('/Register');
   };
+
+  const imageLink = () => {
+    return sessionStorage.getItem("image")
+  };
   
 
 
   if (loading) return (<div>Loading...</div>);
 
   return (
-    <div class="body">  
-      <h1>{course.Title}</h1>   
+    <div class="course-container"> 
+      
+      <h1>
+        <div class="box">
+          <img class="imgT0" src = {imageLink()}></img> 
+          <span class="course-header-text">{course.Title}</span>
+        </div>       
+      </h1>   
       <br></br>
       <br></br>
-      <button type="submit" className="submit-btn" onClick={storeCourseName}>Register</button>
+      
+      <button type="submit" className="register-btn" onClick={storeCourseName}>Register</button>
       <div class='flex-container'>  
         <div class='flex-div'>
           <h2>About This Course: </h2>
@@ -89,7 +101,7 @@ function GetCourse() {
           </ul>
         </div>     
       </div>
-      <button type="submit" className="submit-btn" onClick={storeCourseName}>Register</button>
+      <button type="submit" className="register-btn" onClick={storeCourseName}>Register</button>
     </div>
     
     
