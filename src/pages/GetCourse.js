@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useParams, useNavigate} from 'react-router-dom';
 import './pages.css'
+import imageMap from './ImageMap'
 
 function GetCourse() {
   const navigate = useNavigate();
@@ -9,7 +10,6 @@ function GetCourse() {
   const fullURL = 'http://localhost:5000/authentication-swagger/v1/get-course-info?course=' + encodedCourse;
   const [course, setCourse] = useState(null);
   const [loading, setLoading] = useState(true);
-  sessionStorage.setItem("image", "https://gedvillo.com/wp-content/uploads/2020/05/204f8e666371c25fc99a03470dbd6d58.png")
 
   if(loading){
     console.log("making request");
@@ -36,7 +36,8 @@ function GetCourse() {
   };
 
   const imageLink = () => {
-    return sessionStorage.getItem("image")
+    const title = course.Title;
+    return imageMap[title]
   };
   
 
@@ -48,7 +49,7 @@ function GetCourse() {
       
       <h1>
         <div class="box">
-          <img class="imgT0" src = {imageLink()}></img> 
+          <img class="imgT0" src={imageLink()}></img> 
           <span class="course-header-text">{course.Title}</span>
         </div>       
       </h1>   
