@@ -8,7 +8,10 @@ import { Checkbox } from '@mui/material';
 import { FormControlLabel } from '@mui/material';
 import { FormGroup } from '@mui/material';
 import {Routes, Route, useNavigate} from 'react-router-dom';
-
+import pic1 from "./images/1.png";
+import pic2 from "./images/2.png";
+import pic3 from "./images/3.png";
+import pic4 from "./images/4.png";
 
 export default function Home(){
     const navigate = useNavigate();
@@ -26,43 +29,63 @@ export default function Home(){
   const images = [
     {
       id: 1,
-      url: "https://source.unsplash.com/300x300/?perth,australia",
-      text:"hello hberfrbbcoajnfljneflnerf"
+      url: pic1
     },
     {
       id: 2,
-      url: "https://source.unsplash.com/300x300/?west-australia",
-      text:"hello hberfrbbcoajnfljneflnerf"
+      url: pic2
     },
     {
       id: 3,
-      url: "https://source.unsplash.com/300x300/?perth"
+      url: pic3,
     },
+    
     {
       id: 4,
-      url: "https://source.unsplash.com/300x300/?quokka,perth"
-    }
+      url: pic4,
+    },
   ];
     
     return (
         
-        <body class="body">
+        <body className="body">
         <h1>Easy E-Learning</h1>
         <br></br>
-        <Carousel>
-            <CarouselItem>
-                <img src={`https://as2.ftcdn.net/v2/jpg/03/56/04/97/1000_F_356049725_UvW2FSyPH4E0QR0sJX8o3KUKpKSpzswJ.jpg `} />
-            </CarouselItem>
-            <CarouselItem>
-                <img src={`https://as1.ftcdn.net/v2/jpg/02/03/91/56/1000_F_203915680_M7OaU5UgMNF1clfJuTeXpaS4yxcpQ1Gc.jpg`} />
-            </CarouselItem>
-            <CarouselItem>
-                <img src={`https://as1.ftcdn.net/v2/jpg/06/29/94/90/1000_F_629949028_PbhYMp1SkR2br6k4lYfuLZbBvSldqXbW.jpg`} />
-            </CarouselItem>
-            <CarouselItem>
-                <img src={`https://t4.ftcdn.net/jpg/04/27/12/37/360_F_427123735_IIZzdoLNE1NUoO7HaO9NvNahiUulROcZ.jpg`} />
-            </CarouselItem>
-        </Carousel>
+        <div className = "rowtop">
+        <div class="columntop">
+                <div class="topbuttonX">
+                    <button class="btntopX" onClick={navigateToContactUs}>Collaborate</button>
+                </div>
+            </div>
+            <Carousel>
+                <CarouselItem>
+                    <img src={`https://as2.ftcdn.net/v2/jpg/03/56/04/97/1000_F_356049725_UvW2FSyPH4E0QR0sJX8o3KUKpKSpzswJ.jpg `} />
+                </CarouselItem>
+                <CarouselItem>
+                    <img src={`https://as1.ftcdn.net/v2/jpg/02/03/91/56/1000_F_203915680_M7OaU5UgMNF1clfJuTeXpaS4yxcpQ1Gc.jpg`} />
+                </CarouselItem>
+                <CarouselItem>
+                    <img src={`https://as1.ftcdn.net/v2/jpg/06/29/94/90/1000_F_629949028_PbhYMp1SkR2br6k4lYfuLZbBvSldqXbW.jpg`} />
+                </CarouselItem>
+                <CarouselItem>
+                    <img src={`https://t4.ftcdn.net/jpg/04/27/12/37/360_F_427123735_IIZzdoLNE1NUoO7HaO9NvNahiUulROcZ.jpg`} />
+                </CarouselItem>
+            </Carousel>
+            <div class="columntop">
+                <div class="topbutton">
+                    <button class="btntop" onClick={navigateToContactUs}>Collaborate</button>
+                </div>
+                <div class="topbutton">
+                    <button class="btntop" onClick={navigateToContactUs}>Schedule Assessment</button>
+                </div>
+                <div class="topbutton">
+                    <button class="btntop">View Courses</button>
+                </div>
+                <div class="topbutton">
+                    <button class="btntop">Our Offerings</button>
+                </div>
+            </div>
+        </div>
         <br></br>
         <br></br>
         <h1>Our Services</h1>
@@ -113,20 +136,6 @@ export default function Home(){
         </div>
         <br></br>
         <br></br>
-        <div class = "rowb">
-            <div class="fbutton">
-                <button class="btnf" onClick={navigateToContactUs}>Collaborate</button>
-            </div>
-            <div class="fbutton">
-                <button class="btnf" onClick={navigateToContactUs}>Schedule an Assessment</button>
-            </div>
-            <div class="fbutton">
-                <button class="btnf">View Courses</button>
-            </div>
-            <div class="fbutton">
-                <button class="btnf">Our Offerings</button>
-            </div>
-        </div>
 
         <div class='some-page-wrapper'>
             <div class='row2'>
@@ -178,7 +187,7 @@ export default function Home(){
                     <br></br>
                     <h3>SAFe</h3>
                     <br></br>
-                    <img class='partnerImg' src='https://images.credly.com/images/7a30a2e5-82bb-406b-b0f8-52fd846eac69/linkedin_thumb_cert_mark_SSM_badge_large_300px.png'></img>
+                    <img class='partnerImg' src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQT9U3eojLRvexjqYpj4YNNhVWfkJz1JWuIdUSytD7_&s'></img>
                     
                 </div>
                 </div>
@@ -263,8 +272,8 @@ export default function Home(){
             <FormControlLabel control={<Checkbox defaultChecked />} label="I agree to recieve sponsored emails" />
         </FormGroup>
         <button type="submit" className="submit-btn">Sign Up</button>
-    </div>
         
+    </div>
         
 
        </body>
