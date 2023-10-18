@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useParams, useNavigate} from 'react-router-dom';
 import './pages.css'
+import imageMap from './ImageMap'
 
 function GetCourse() {
   const navigate = useNavigate();
@@ -33,24 +34,39 @@ function GetCourse() {
     sessionStorage.setItem('title', course.Title);
     navigate('/Register');
   };
+
+  const imageLink = () => {
+    const title = course.Title;
+    return imageMap[title]
+  };
   
 
 
   if (loading) return (<div>Loading...</div>);
 
   return (
-    <div>  
-      <h1>{course.Title}</h1>   
+    <div class="course-container"> 
+      
+      <h1>
+        <div class="box">
+          <img class="imgT0" src={imageLink()}></img> 
+          <span class="course-header-text">{course.Title}</span>
+        </div>       
+      </h1>   
       <br></br>
       <br></br>
-      <button type="submit" className="submit-btn" onClick={storeCourseName}>Register</button>
+      
+      <button type="submit" className="register-btn" onClick={storeCourseName}>Register</button>
       <div class='flex-container'>  
         <div class='flex-div'>
           <h2>About This Course: </h2>
+          <br></br>
           <div>{course["About This Course"]}</div>
           <br></br>
           <h2>What you learn</h2>
-          <div>{course["What You’ll Learn"]}</div>
+          <br></br>
+          <div >{course["What You’ll Learn"]}</div>
+          <br></br>
           <br></br>
           <h2>Training Overview</h2>
           <ul style={{marginLeft: '2.1em'}}>
@@ -73,6 +89,7 @@ function GetCourse() {
 
         <div class='flex-div'>
           <h2>Length: </h2>
+          <br></br>
           <div>Effort/Duration: {course["Effort/Duration"]} days</div>
           <div>Cost: ${course["Cost"]}</div>
           <br></br>
@@ -85,7 +102,7 @@ function GetCourse() {
           </ul>
         </div>     
       </div>
-      <button type="submit" className="submit-btn" onClick={storeCourseName}>Register</button>
+      <button type="submit" className="register-btn" onClick={storeCourseName}>Register</button>
     </div>
     
     
