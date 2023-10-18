@@ -8,7 +8,10 @@ import { Checkbox } from '@mui/material';
 import { FormControlLabel } from '@mui/material';
 import { FormGroup } from '@mui/material';
 import {Routes, Route, useNavigate} from 'react-router-dom';
-
+import pic1 from "./images/1.png";
+import pic2 from "./images/2.png";
+import pic3 from "./images/3.png";
+import pic4 from "./images/4.png";
 
 export default function Home(){
     const navigate = useNavigate();
@@ -26,22 +29,21 @@ export default function Home(){
   const images = [
     {
       id: 1,
-      url: "https://source.unsplash.com/300x300/?perth,australia",
-      text:"hello hberfrbbcoajnfljneflnerf"
+      url: pic1
     },
     {
       id: 2,
-      url: "https://source.unsplash.com/300x300/?west-australia",
-      text:"hello hberfrbbcoajnfljneflnerf"
+      url: pic2
     },
     {
       id: 3,
-      url: "https://source.unsplash.com/300x300/?perth"
+      url: pic3,
     },
+    
     {
       id: 4,
-      url: "https://source.unsplash.com/300x300/?quokka,perth"
-    }
+      url: pic4,
+    },
   ];
     
     return (
@@ -185,7 +187,7 @@ export default function Home(){
                     <br></br>
                     <h3>SAFe</h3>
                     <br></br>
-                    <img class='partnerImg' src='https://images.credly.com/images/7a30a2e5-82bb-406b-b0f8-52fd846eac69/linkedin_thumb_cert_mark_SSM_badge_large_300px.png'></img>
+                    <img class='partnerImg' src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQT9U3eojLRvexjqYpj4YNNhVWfkJz1JWuIdUSytD7_&s'></img>
                     
                 </div>
                 </div>
@@ -270,8 +272,8 @@ export default function Home(){
             <FormControlLabel control={<Checkbox defaultChecked />} label="I agree to recieve sponsored emails" />
         </FormGroup>
         <button type="submit" className="submit-btn">Sign Up</button>
-    </div>
         
+    </div>
         
 
        </body>
