@@ -11,6 +11,7 @@ import AboutUs from './pages/AboutUs';
 import BecomeTrainer from './pages/BecomeTrainer';
 import ContactUs from './pages/ContactUs'
 import Terms from './pages/Terms'
+import Register from './pages/Register'
 import NewCourses from './pages/NewCourses'
 //request samples
 import GetCourse from './pages/GetCourse'
@@ -57,6 +58,7 @@ function App(){
           <Route path="/terms" element={<Terms />} />
           <Route path="/getCourse/:courseName" element={<GetCourse />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
         </Routes>
       <Footer />
       </div>
