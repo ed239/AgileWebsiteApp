@@ -5,12 +5,6 @@ export default function Training(){
     return (
         <body class="bodyT">
             <h1>Public & Corporate Training</h1>
-
-            <div className='filterT'>
-                <input type='text' id="filter"  />
-                <button>Filter</button>
-            </div>
-
             <div class="rowT">
                 <h1>Public Training</h1>
             </div>
