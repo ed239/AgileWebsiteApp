@@ -24,6 +24,14 @@ export default function Home(){
         // 👇️ navigate to /contacts
         navigate('/AboutUs');
       };
+    const navigateToTraining = () => {
+    // 👇️ navigate to /contacts
+    navigate('/Training');
+    };
+    const navigateToUpcomingCourses = () => {
+        // 👇️ navigate to /contacts
+        navigate('/newcourses');
+        };
   const sliderRef = useRef(null);
   const scrollAmount = 100;
   const images = [
@@ -73,16 +81,16 @@ export default function Home(){
             </Carousel>
             <div class="columntop">
                 <div class="topbutton">
-                    <button class="btntop" onClick={navigateToContactUs}>Collaborate</button>
+                    <button class="btntop" onClick={navigateToAboutUs}>Collaborate</button>
                 </div>
                 <div class="topbutton">
                     <button class="btntop" onClick={navigateToContactUs}>Schedule Assessment</button>
                 </div>
                 <div class="topbutton">
-                    <button class="btntop">View Courses</button>
+                    <button class="btntop" onClick={navigateToTraining}>View Courses</button>
                 </div>
                 <div class="topbutton">
-                    <button class="btntop">Our Offerings</button>
+                    <button class="btntop" onClick={navigateToUpcomingCourses}>Our Offerings</button>
                 </div>
             </div>
         </div>
