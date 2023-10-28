@@ -12,6 +12,19 @@ class CourseServicer:
             courses.append(course['Title'])
         return courses
 
+    def all_courses_detail(self):
+        courses = []
+        cursor = self.course_col.find({},{'_id':0, 'Title':1, 'City':1, 'Country':1, 'StartDate':1})
+        for course in cursor:
+            payload = {
+                'Title':course['Title'],
+                'City': course['City'],
+                'Country': course['Country'],
+                'StartDate': course['StartDate']
+                }
+            courses.append(payload)
+        return courses
+
     def owned_courses(self, email):
         myquery = [{"$match": {"Email": email}},
                    {"$project": {
@@ -51,6 +64,9 @@ class CourseServicer:
                    {"$project": {
                        "_id": 0,
                        "Title": 1,
+                       "City": 1,
+                       "Country": 1,
+                       "StartDate":1,
                        "Effort/Duration": 1,
                        "Cost": 1,
                        "About This Course": 1,
