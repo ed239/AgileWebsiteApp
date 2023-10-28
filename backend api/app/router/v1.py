@@ -124,6 +124,20 @@ def get_all_courses():
     return all_courses
 
 @router.get(
+    "/all-courses-detail",
+    summary="Get all Courses detail",
+    description="Get all Courses detail",
+    status_code=status.HTTP_201_CREATED,
+)
+def get_all_courses_detail():
+    log.info("Getting all courses detail")
+    course_service = CourseServicer(mydb)
+    all_courses_detail = course_service.all_courses_detail()
+
+    log.info("Server.get_all_courses_detail finished!")
+    return all_courses_detail
+
+@router.get(
     "/get-course-info",
     summary="Get course info",
     description="Get course info",
