@@ -7,7 +7,8 @@ import { useParams, useNavigate} from 'react-router-dom';
 export default function Assessment(){
         const navigate = useNavigate();
         const fullURL = 'http://localhost:5000/authentication-swagger/v1/all-courses-detail';
-        const [course, setCourse] = useState(null);
+        const [courses, setCourses] = useState(null);
+        const [selectedCourses, setSelectedCourses] = useState(null);
         const [loading, setLoading] = useState(true);
       
         if(loading){
@@ -20,7 +21,8 @@ export default function Assessment(){
           })
           .then(response => response.json())
           .then(data => {
-            setCourse(data);
+            setCourses(data);
+            setSelectedCourses(data);
             setLoading(false);
           })
           .catch(error => {
@@ -31,6 +33,32 @@ export default function Assessment(){
 
       
         if (loading) return (<div>Loading...</div>);
+
+        const formatMonth = (dateStr) => {
+            // take in date string like "2023-09-03" and return "Sep"
+            const date = new Date(dateStr);
+            return date.toLocaleDateString('en-US', { month: 'short'});
+          };
+
+        const formatDate = (dateStr) => {
+            // take in date string like "2023-09-03" and return "03"
+            const date = new Date(dateStr);
+            const day = date.getDate();
+            return day < 10 ? `0${day}` : day.toString();
+          };
+
+        function redirectCourse(title){
+            navigate('/getcourse/'+title);
+        };
+
+        function filter(field, value){
+            //example for filter on city
+            if(field==='City'){
+                const filtered = courses.filter(course => course.City === value);
+                setSelectedCourses(filtered);
+            }
+            //for more complicated filter like date, might need to use a loop
+        }
       
 
     return (
@@ -68,67 +96,24 @@ export default function Assessment(){
                     <button class="btnncfClear"><b>Clear Filters</b></button>
                 </div>
             </div>
-            <div className="c2">
+            <div className="scroll-container">
                 <h1>Calendar</h1>
                 <br></br>
-                <div class="rectangle">
-                    <div class="square">
-                        <p class="textU"><b>Nov</b></p>
-                        <p class="textC"><b>03</b></p>
+                {selectedCourses.map((detail, index) => (
+                    <div class="rectangle" onClick={() => redirectCourse(detail.Title)}>
+                        <div class="square">
+                            <p class="textU"><b>{formatMonth(detail.StartDate)}</b></p>
+                            <p class="textC"><b>{formatDate(detail.StartDate)}</b></p>
+                        </div>
+                        <div class="content">
+                            <p class="textU2" id="course-name"><b>Course Name: {detail.Title}</b></p>
+                            <p class="textU2"><b>Location : {detail.City}, {detail.Country}</b></p>
+                            <p class="textU2"><b>Instructor: Raj Heda</b></p>
+                        </div>
                     </div>
-                    <div class="content">
-                        <p class="textU2"><b>Course Name: {course[0].Title}</b></p>
-                        <p class="textU2"><b>Location : {course[0].City}, {course[0].Country}</b></p>
-                        <p class="textU2"><b>Instructor: Raj Heda</b></p>
-                    </div>
-                </div>
-                <div class="rectangle">
-                    <div class="square">
-                        <p class="textU"><b>Nov</b></p>
-                        <p class="textC"><b>24</b></p>
-                    </div>
-                    <div class="content">
-                        <p class="textU2"><b>Course Name: {course[1].Title}</b></p>
-                        <p class="textU2"><b>Location : {course[1].City}, {course[1].Country}</b></p>
-                        <p class="textU2"><b>Instructor: Raj Heda</b></p>
-                    </div>
-                </div>
-                <div class="rectangle">
-                    <div class="square">
-                        <p class="textU"><b>Dec</b></p>
-                        <p class="textC"><b>05</b></p>
-                    </div>
-                    <div class="content">
-                        <p class="textU2"><b>Course Name: {course[2].Title}</b></p>
-                        <p class="textU2"><b>Location : {course[2].City}, {course[2].Country}</b></p>
-                        <p class="textU2"><b>Instructor: Raj Heda</b></p>
-                    </div>
-                </div>
-                <div class="rectangle">
-                    <div class="square">
-                        <p class="textU"><b>Dec</b></p>
-                        <p class="textC"><b>19</b></p>
-                    </div>
-                    <div class="content">
-                        <p class="textU2"><b>Course Name: {course[3].Title}</b></p>
-                        <p class="textU2"><b>Location : {course[3].City}, {course[3].Country}</b></p>
-                        <p class="textU2"><b>Instructor: Raj Heda</b></p>
-                    </div>
-                </div>
-                <div class="rectangle">
-                    <div class="square">
-                        <p class="textU"><b>Jan</b></p>
-                        <p class="textC"><b>10</b></p>
-                    </div>
-                    <div class="content">
-                        <p class="textU2"><b>Course Name: {course[4].Title}</b></p>
-                        <p class="textU2"><b>Location : {course[4].City}, {course[4].Country}</b></p>
-                        <p class="textU2"><b>Instructor: Raj Heda</b></p>
-                    </div>
-                </div>
+                ))}
+                
                 <br></br>
-
-
             </div>
             <br></br>
         </div>
@@ -138,5 +123,5 @@ export default function Assessment(){
 
     </body>
     )
-
 }
+
