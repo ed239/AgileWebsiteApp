@@ -1,7 +1,37 @@
 import './pages.css'
 import './calender.css'
+import imageMap from './ImageMap'
+import React, { useState } from 'react';
+import { useParams, useNavigate} from 'react-router-dom';
 
 export default function Assessment(){
+        const navigate = useNavigate();
+        const fullURL = 'http://localhost:5000/authentication-swagger/v1/all-courses-detail';
+        const [course, setCourse] = useState(null);
+        const [loading, setLoading] = useState(true);
+      
+        if(loading){
+          console.log("making request");
+          fetch(fullURL, {
+            method: 'GET',
+            headers: {
+              'accept': 'application/json'
+            }
+          })
+          .then(response => response.json())
+          .then(data => {
+            setCourse(data);
+            setLoading(false);
+          })
+          .catch(error => {
+            console.error("Error fetching course info:", error);
+            setLoading(false);
+          });
+        }
+
+      
+        if (loading) return (<div>Loading...</div>);
+      
 
     return (
     <body class="body">
@@ -47,9 +77,9 @@ export default function Assessment(){
                         <p class="textC"><b>03</b></p>
                     </div>
                     <div class="content">
-                        <p class="textU"><b>Course Name: Certified Agile Leadership (CAL1)</b></p>
-                        <p class="textU"><b>Location : Boston, USA</b></p>
-                        <p class="textU"><b>Instructor: Raj Heda</b></p>
+                        <p class="textU2"><b>Course Name: {course[0].Title}</b></p>
+                        <p class="textU2"><b>Location : {course[0].City}, {course[0].Country}</b></p>
+                        <p class="textU2"><b>Instructor: Raj Heda</b></p>
                     </div>
                 </div>
                 <div class="rectangle">
@@ -58,9 +88,9 @@ export default function Assessment(){
                         <p class="textC"><b>24</b></p>
                     </div>
                     <div class="content">
-                        <p class="textU"><b>Course Name: Certified SAFe® Agilist</b></p>
-                        <p class="textU"><b>Location : New York, USA</b></p>
-                        <p class="textU"><b>Instructor: Raj Heda</b></p>
+                        <p class="textU2"><b>Course Name: {course[1].Title}</b></p>
+                        <p class="textU2"><b>Location : {course[1].City}, {course[1].Country}</b></p>
+                        <p class="textU2"><b>Instructor: Raj Heda</b></p>
                     </div>
                 </div>
                 <div class="rectangle">
@@ -69,9 +99,9 @@ export default function Assessment(){
                         <p class="textC"><b>05</b></p>
                     </div>
                     <div class="content">
-                        <p class="textU"><b>Course Name: Certified SAFe® Scrum Master</b></p>
-                        <p class="textU"><b>Location : Boston, USA</b></p>
-                        <p class="textU"><b>Instructor: Raj Heda</b></p>
+                        <p class="textU2"><b>Course Name: {course[2].Title}</b></p>
+                        <p class="textU2"><b>Location : {course[2].City}, {course[2].Country}</b></p>
+                        <p class="textU2"><b>Instructor: Raj Heda</b></p>
                     </div>
                 </div>
                 <div class="rectangle">
@@ -80,9 +110,9 @@ export default function Assessment(){
                         <p class="textC"><b>19</b></p>
                     </div>
                     <div class="content">
-                        <p class="textU"><b>Course Name: Certified SAFe® Agile Product Manager</b></p>
-                        <p class="textU"><b>Location : New York, USA</b></p>
-                        <p class="textU"><b>Instructor: Raj Heda</b></p>
+                        <p class="textU2"><b>Course Name: {course[3].Title}</b></p>
+                        <p class="textU2"><b>Location : {course[3].City}, {course[3].Country}</b></p>
+                        <p class="textU2"><b>Instructor: Raj Heda</b></p>
                     </div>
                 </div>
                 <div class="rectangle">
@@ -91,9 +121,9 @@ export default function Assessment(){
                         <p class="textC"><b>10</b></p>
                     </div>
                     <div class="content">
-                        <p class="textU"><b>Course Name: Certified SAFe® Program Consultant</b></p>
-                        <p class="textU"><b>Location : Boston, USA</b></p>
-                        <p class="textU"><b>Instructor: Raj Heda</b></p>
+                        <p class="textU2"><b>Course Name: {course[4].Title}</b></p>
+                        <p class="textU2"><b>Location : {course[4].City}, {course[4].Country}</b></p>
+                        <p class="textU2"><b>Instructor: Raj Heda</b></p>
                     </div>
                 </div>
                 <br></br>
