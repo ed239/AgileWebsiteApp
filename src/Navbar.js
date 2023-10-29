@@ -22,10 +22,10 @@ export default function Navbar(){
         </ul>
         <ul id="socials2">
             <br></br>
-            <FontAwesomeIcon icon={faYoutube} size="2x" />
-            <FontAwesomeIcon icon={faFacebook} size="2x" />
-            <FontAwesomeIcon icon={faTwitter} size="2x" />
-            <FontAwesomeIcon icon={faInstagram} size="2x" />
+            <FontAwesomeIcon id="icon" icon={faYoutube} size="2x" />
+            <FontAwesomeIcon id="icon" icon={faFacebook} size="2x" />
+            <FontAwesomeIcon id="icon" icon={faTwitter} size="2x" />
+            <FontAwesomeIcon id="icon" icon={faInstagram} size="2x" />
         </ul>
     </nav>
 }
