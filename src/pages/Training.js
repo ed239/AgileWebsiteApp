@@ -109,7 +109,7 @@ export default function Training(){
                 </Link>
             </div>
 
-            <div class="rowTF">
+            <div class="rowTF2">
                 <h1>Corporate Training</h1>
             </div>
             <div class="rowT">

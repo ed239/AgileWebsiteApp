@@ -1,5 +1,6 @@
 import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { Menu, MenuButton, MenuList, MenuItem } from "@reach/menu-button";
+import {Link} from 'react-router-dom';
 import CustomLink from "./Navbar"
 import './styles.css'
 
@@ -81,7 +82,7 @@ export default function CategoryDropdown(props) {
             setIsOpen(false);
           }}
         >
-          Upcoming Courses
+          <Link to="/newcourses">Upcoming Courses</Link>
         </MenuItem>
       </MenuList>
     </Menu>

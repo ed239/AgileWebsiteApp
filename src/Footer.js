@@ -17,7 +17,7 @@ export default function Footer(){
         <ul id="flinks">
             <CustomLink to="aboutus">About Us</CustomLink>
             <CustomLink to="contactus">Contact Us</CustomLink>
-            <CustomLink to="becometrainer">Become a Trainer</CustomLink>
+            <CustomLink to="coaching">Become a Mentor</CustomLink>
             <CustomLink to="terms">Terms & Conditions</CustomLink>
         </ul>
         
