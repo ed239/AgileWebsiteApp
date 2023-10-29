@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import imageMap from './ImageMap'
+import ValidationResult from './validation';
 
 export default function Register(){
     const courses = Object.keys(imageMap);
     const [selectedCourse, setSelectedCourse] = useState(sessionStorage.getItem('title'));
+    const [selectedCity, setSelectedCity] = useState();
     const [imageLink, setImageLink] = useState(imageMap[sessionStorage.getItem('title')]);
     const [showPopup, setShowPopup] = useState(false);
 
@@ -22,7 +24,7 @@ export default function Register(){
             'name':document.getElementById('register-name').value,
             'email':document.getElementById('register-email').value,
             'password':document.getElementById('register-password').value,
-            'country':document.getElementById('register-country').value,
+            'country':selectedCity,
             'course':selectedCourse,
             'contactNo':document.getElementById('register-number').value,
         };
@@ -36,23 +38,23 @@ export default function Register(){
         setImageLink(imageMap[course]);
       };
 
-    const validation = () =>{
-        for (let key in payload) {
-            if(payload[key]==''){
-                return false;
-            };
-          }
-        return true;
-    }
+    // const validation = () =>{
+    //     for (let key in payload) {
+    //         if(payload[key]==''){
+    //             return false;
+    //         };
+    //       }
+    //     return true;
+    // }
 
-    const popupMessage = () =>{
-        if(validation()){
-            return 'Sign Up Successful!';
-        }
-        else{
-            return "Please populate all fields";
-        }
-    }
+    // const popupMessage = () =>{
+    //     if(validation()){
+    //         return 'Sign Up Successful!';
+    //     }
+    //     else{
+    //         return "Please populate all fields";
+    //     }
+    // }
 
 
 
@@ -69,27 +71,34 @@ export default function Register(){
         <div className="App2">
         <h3>Create your own account below</h3>
         <form>
-            <div className="input-group">
-                <label htmlFor="name">Full Name</label>
-                <input type="text" id="register-name" />
+            <div className="register-input-group">
+                <label htmlFor="name">Full Name:</label>
+                <input className="register-input" type="text" id="register-name" />
             </div>
-            <div className="input-group">
-                <label htmlFor="email">Email</label>
-                <input type="email" id="register-email" />
+            <div className="register-input-group">
+                <label htmlFor="email">Email:</label>
+                <input className="register-input" type="email" id="register-email" />
             </div>
-            <div className="input-group">
-                <label htmlFor="password">Password</label>
-                <input type="text" id="register-password" />
+            <div className="register-input-group">
+                <label htmlFor="password">Password:</label>
+                <input className="register-input" type="text" id="register-password" />
             </div>
-            <div className="input-group">
-                <label htmlFor="country">Country</label>
-                <input type="text" id="register-country" />
+            <div className="register-input-group">
+                <label htmlFor="City">City:</label>
+                <select className="course-dropdown"
+                    value={selectedCourse} 
+                    onChange={e => setSelectedCity(e.target.value)}>
+                    <option value="Boston">Boston</option>
+                    <option value="San Jose">San Jose</option>
+                    <option value="Houston">Houston</option>
+                    <option value="Raleigh">Raleigh</option>
+                </select>
             </div>
-            <div className="input-group">
-                <label htmlFor="number">Contact No.</label>
-                <input type="text" id="register-number" />
+            <div className="register-input-group">
+                <label htmlFor="number">Contact No.:</label>
+                <input className="register-input" type="text" id="register-number" />
             </div>
-            <div className="input-group">
+            <div className="register-input-group">
                 <label htmlFor="course">Select Course</label>
                 <select 
                     className="course-dropdown"
@@ -113,7 +122,7 @@ export default function Register(){
                 <br></br>
                 <div className="popup-inner">
                     <h2>Info</h2>
-                    <div>{popupMessage()}</div>
+                    <div>{ValidationResult(payload)}</div>
                     <br></br>
                     <br></br>
                     <button onClick={() => setShowPopup(false)}>Close</button>
