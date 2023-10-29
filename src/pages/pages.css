@@ -452,6 +452,16 @@
   padding-right: 5rem;
   padding-bottom: 4rem;
 }
+.rowTF2 {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  column-gap: 3rem;
+  padding-left: 3rem;
+  padding-right: 5rem;
+  padding-bottom: 1rem;
+}
 
 .imgT2 {
   height: 10rem;
@@ -466,11 +476,13 @@
   width:10rem;
   border-radius: 0px;
   cursor: pointer;
+  margin-top: 2rem;
 }
 
 .btnt{
   background-color: rgb(84, 81, 220);
   color: white;
+  cursor: pointer;
   border: none;
   font-size: large;
   padding-top: 30%;
@@ -481,8 +493,8 @@
 .assessment-main-img{
   padding: 20px 0px 50px 0px;
   background-image: url(https://plus.unsplash.com/premium_photo-1680807869086-e08309acfb24?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8YXNzZXNzbWVudHxlbnwwfHwwfHx8MA%3D%3D&w=1000&q=80);
-  width: 1400px; 
-  height: 600px;
+  width: 1000px; 
+  height: 400px;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -516,7 +528,7 @@
     background-color: black;
     color: white;
     border: none;
-    font-size: 20px;
+    font-size: 15px;
     padding: 1.5rem;
     border-radius: 0px;
     margin: 0px;
@@ -525,21 +537,21 @@
 
 .assessment-content{
   text-align: left;
-  margin: 20px 7%;
+  margin: 20px 12%;
 }
 
 .ass-content p,ul{
   margin: 20px 50px;
 }
 .ass-content h1{
-  font-size: 50px;
+  font-size: 30px;
 }
 .ass-content p{
-  font-size: 25px;
+  font-size: 18px;
   letter-spacing:0.1ch;
 }
 .ass-content li{
-  font-size: 35px;
+  font-size: 25px;
   font-weight: 600;
   margin: 30px;
   text-decoration: underline;
@@ -604,15 +616,23 @@
 }
   
 .coaching-content h1{
-  font-size: 42px;
+  font-size: 30px;
 }
 
 .coaching-content p{
-  font-size: 28px;
-  margin: 3% 7% 7% 7%;
-  line-height: 40px;
+  font-size: 18px;
+  margin: 2% 7% 7% 7%;
+  line-height: 25px;
 }
 
+.contact-box{
+  background-color: beige;
+  margin: 6% auto;
+  padding: 30px;
+  border: 1px solid black;
+  width: 40%;
+  height: 570px;
+}
 
 .popup {
   position: fixed;
@@ -655,4 +675,41 @@
 
 .popup-inner button:hover {
   background-color: #0056b3;  /* Slightly darker blue on hover */
+}
+
+.contact-box h1{
+  margin: 30px 0px 15% 0px; 
+}
+
+.contact-box p{
+  font-size: 20px;
+}
+
+.ctn-email{
+  color: #0000CD;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.filterT{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 3rem;
+  padding-right: 5rem;
+  margin: 20px 0px;
+}
+
+.filterT input{
+  font-size: 22px;
+ margin-right: 10px;
+ padding: 5px;
+}
+
+.filterT button{
+  font-size: 20px;
+  padding: 7px 25px;
+  border: none;
+  color: white;
+  background-color: #000;
 }
