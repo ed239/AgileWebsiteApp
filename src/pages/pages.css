@@ -550,4 +550,115 @@
   line-height: 40px;
 }
 
+<<<<<<< Updated upstream
 
+=======
+/* .contact-box{
+  margin: 6% auto;
+  padding: 30px;
+  width: 40%;
+  height: 570px;
+} */
+
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;  /* Span the entire width */
+  background-color: rgba(203, 201, 201, 0.95); /* Near white, slightly translucent */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0; /* Padding top and bottom */
+  z-index: 1000;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Slight shadow to differentiate from the content */
+  transition: all 0.3s ease-in-out;
+}
+
+.popup-inner {
+  max-width: 600px;  /* Maximum width so it doesn't stretch too wide on large screens */
+  text-align: center;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.popup-inner h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #333;  /* Dark gray */
+}
+
+.popup-inner button {
+  padding: 10px 20px;
+  border: none;
+  background-color: #007BFF;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 4px;
+  font-weight: 600;  /* Semi-bold text */
+  transition: background-color 0.2s ease-in-out;
+}
+
+.popup-inner button:hover {
+  background-color: #0056b3;  /* Slightly darker blue on hover */
+}
+.contact-box h1{
+  margin: 30px 0px 5% 0px; 
+}
+
+.contact-box p{
+  font-size: 20px;
+}
+
+.ctn-email{
+  color: #0000CD;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.filterT{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 3rem;
+  padding-right: 5rem;
+  margin: 20px 0px;
+}
+
+.filterT input{
+  font-size: 22px;
+ margin-right: 10px;
+ padding: 5px;
+}
+
+.filterT button{
+  font-size: 20px;
+  padding: 7px 25px;
+  border: none;
+  color: white;
+  background-color: #000;
+}
+
+.contactus-main{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 6%;
+}
+
+.cnt-form{
+  text-align: left;
+  font-size: 20px;
+}
+
+.cnt-form label{
+   font-weight: 600;
+   margin-bottom: 8px;
+}
+
+.cnt-form input{
+  font-size: 20px;
+ padding: 10px 10px;
+ margin-bottom: 20px;
+}
+>>>>>>> Stashed changes
