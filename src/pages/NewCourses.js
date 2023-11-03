@@ -1,17 +1,21 @@
 import './pages.css'
 import './calender.css'
 import imageMap from './ImageMap'
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate} from 'react-router-dom';
 
 export default function Assessment(){
         const navigate = useNavigate();
         const fullURL = 'http://localhost:5000/authentication-swagger/v1/all-courses-detail';
+        const [uniqueCities, setUniqueCities] = useState(null);
         const [courses, setCourses] = useState(null);
         const [selectedCourses, setSelectedCourses] = useState(null);
+        const [selectedCity, setSelectedCity] = useState('');
         const [loading, setLoading] = useState(true);
+
+        
       
-        if(loading){
+        useEffect(() => {if(loading){
           console.log("making request");
           fetch(fullURL, {
             method: 'GET',
@@ -23,13 +27,39 @@ export default function Assessment(){
           .then(data => {
             setCourses(data);
             setSelectedCourses(data);
+            initFilter(data);
             setLoading(false);
           })
           .catch(error => {
             console.error("Error fetching course info:", error);
             setLoading(false);
           });
+          
+        }})
+
+        function initFilter(data){
+            //this one is only setting unique cities for now. 
+            //We'll use this same function to set initial start date filter and so on
+            var cities = Array.from(new Set(data.map(item => item.City)));
+            setUniqueCities(cities);
         }
+
+        const handleCityChange = (event) => {
+            const city = event.target.value;
+            console.log(city);
+            setSelectedCity(city);
+            // Find the course for the selected city
+            const filtered = courses.filter(course => course.City === city);
+
+            if(filtered.length==0){
+                //show all courses if filter is bad
+                setSelectedCourses(courses);
+            }
+            else{               
+                setSelectedCourses(filtered);
+            }
+     
+          };
 
       
         if (loading) return (<div>Loading...</div>);
@@ -51,17 +81,12 @@ export default function Assessment(){
             navigate('/getcourse/'+title);
         };
 
-        function filter(field, value){
-            //example for filter on city
-            if(field==='City'){
-                const filtered = courses.filter(course => course.City === value);
-                setSelectedCourses(filtered);
-            }
-            //for more complicated filter like date, might need to use a loop
-        }
+
+        
       
 
     return (
+        
     <body class="body">
         <h1>Upcoming Courses</h1>
         <br></br>
@@ -84,8 +109,14 @@ export default function Assessment(){
                     <button class="btnncf">All Countries</button>
                 </div>
                 <div class="NCFbutton">
-                    <button class="btnncf">City</button>
+                    <select class="btnncf" value={selectedCity} onChange={handleCityChange}>
+                        <option value="">City</option>
+                        {uniqueCities.map((item, index) => (
+                        <option key={index} value={item}>{item}</option>
+                        ))}
+                    </select>
                 </div>
+                
                 <div class="NCFbutton">
                     <button class="btnncf">All Trainers</button>
                 </div>
