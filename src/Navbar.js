@@ -1,7 +1,15 @@
 
 
 import HoverMenuButton from "./HoverMenuButton";
+import './styles.css'
 import { Link, useMatch, useResolvedPath } from "react-router-dom"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+    faYoutube,
+    faFacebook,
+    faTwitter,
+    faInstagram
+  } from "@fortawesome/free-brands-svg-icons";
 export default function Navbar(){
     
     return <nav className="nav">
@@ -10,8 +18,14 @@ export default function Navbar(){
             <CustomLink to="assessment">Assessment</CustomLink>
             <CustomLink to="training"><HoverMenuButton title="Training" /></CustomLink>
             <CustomLink to="coaching">Coaching</CustomLink>
-            <CustomLink to="resources">Resources</CustomLink>
-            <CustomLink to="newcourses">New Courses</CustomLink>
+            <CustomLink to="newcourses">View Courses</CustomLink>
+        </ul>
+        <ul id="socials2">
+            <br></br>
+            <FontAwesomeIcon id="icon" icon={faYoutube} size="2x" />
+            <FontAwesomeIcon id="icon" icon={faFacebook} size="2x" />
+            <FontAwesomeIcon id="icon" icon={faTwitter} size="2x" />
+            <FontAwesomeIcon id="icon" icon={faInstagram} size="2x" />
         </ul>
     </nav>
 }

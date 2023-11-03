@@ -1,7 +1,3 @@
-<<<<<<< Updated upstream
-export default function ContactUs(){
-    return <h1>Contact Us</h1>
-=======
 import './pages.css'
 import pic5 from "./images/5.jpeg";
 import FormControl from '@mui/material/FormControl';
@@ -10,7 +6,6 @@ export default function ContactUs(){
     return (
 
         <div className="contact-box">
-           
             <h1>Easy E-Learning</h1>
            
             <div className='contactus-main'>
@@ -30,10 +25,10 @@ export default function ContactUs(){
                 </FormControl>
               </div>
             </div>
+
         </div>
     )
     
-    
->>>>>>> Stashed changes
+
 
 }

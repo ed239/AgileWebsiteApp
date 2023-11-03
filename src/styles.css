@@ -18,9 +18,19 @@ body{
     justify-content: space-between;
     align-items: stretch;
     padding-top: .78rem;
-    padding-right: .78rem;
+    padding-right: 0;
     padding-left: .78rem;
 
+}
+#socials2{
+    display:inline-block;
+    row-gap: 1rem;
+    margin: 0 0rem;
+    padding-top: 1rem;
+    
+}
+#icon{
+    margin-left: 1rem;
 }
  .foot {
     background-color: rgb(47, 218, 141);
@@ -61,6 +71,7 @@ body{
     width: 5rem;
     height: 5rem;
     margin-left: 4rem;
+    margin-right: 6rem;
 }
 
 .foot-title {
@@ -73,7 +84,7 @@ body{
     list-style: none;
     display: flex;
     gap: 1rem;
-    padding-right: 3rem;
+    padding-right: 1rem;
 }
 
 .nav a {
@@ -86,7 +97,7 @@ body{
 }
 
 .nav li.active {
-    background-color: #555;
+    background-color: rgb(47, 218, 141);
 }
 
 .nav li:hover {
@@ -113,8 +124,8 @@ body{
   }
   
   [data-reach-menu-list] {
-    border: 5px solid grey;
-    background-color: grey;
+    border: 5px solid  rgb(47, 218, 141);
+    background-color:  rgb(47, 218, 141);
   }
 
 

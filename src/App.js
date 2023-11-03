@@ -6,11 +6,11 @@ import Home  from './pages/Home';
 import Assessment from './pages/Assessment';
 import Training from './pages/Training';
 import Coaching from './pages/Coaching';
-import Resources from './pages/Resources';
 import AboutUs from './pages/AboutUs';
 import BecomeTrainer from './pages/BecomeTrainer';
 import ContactUs from './pages/ContactUs'
 import Terms from './pages/Terms'
+import Register from './pages/Register'
 import NewCourses from './pages/NewCourses'
 //request samples
 import GetCourse from './pages/GetCourse'
@@ -49,7 +49,6 @@ function App(){
           <Route path="/assessment" element={<Assessment />} />
           <Route path="/training" element={<Training />} />
           <Route path="/coaching" element={<Coaching />} />
-          <Route path="/resources" element={<Resources />} />
           <Route path="/newcourses" element={<NewCourses />} />
           <Route path="/aboutus" element={<AboutUs />} />
           <Route path="/contactus" element={<ContactUs />} />
@@ -57,6 +56,7 @@ function App(){
           <Route path="/terms" element={<Terms />} />
           <Route path="/getCourse/:courseName" element={<GetCourse />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
         </Routes>
       <Footer />
       </div>

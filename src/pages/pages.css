@@ -3,6 +3,13 @@
     padding-top: 2rem;
 }
 
+.course-container {
+  background-color: beige;
+  border: 2px solid #000000; 
+  padding: 30px;  
+  margin: 10px;
+}
+
 
 
   
@@ -204,6 +211,22 @@
     font-weight: 700;
     margin-bottom: 0.3rem;
   }
+  .register-input-group {
+    margin: 1rem 0;
+  }
+  .register-input-group > label {
+    text-align: right;
+    flex-shrink: 0;
+    font-size: 0.9rem;
+    font-weight: 700;
+    margin-bottom: 0.3rem;
+    padding-right: 1rem;
+  }
+  .register-input {
+    width: 20%;
+    position: absolute;
+    right: 35%; 
+  }
   .input {
     width: 100%;
     display: flex;
@@ -307,6 +330,7 @@
 
   .btntop{
     background-color: rgb(47, 218, 141);
+    cursor: pointer;
     color: black;
     border: none;
   }
@@ -323,6 +347,7 @@
   .btntopX{
     background-color:white;
     color: white;
+    cursor: pointer;
     border: none;
   }
   .columntop {
@@ -380,17 +405,18 @@
   .flex-container {
     display: flex;
     align-items: left;
-    height: 100vh;
+    height: 100%;
   }
 
   .flex-div {
+    display: block;
     flex: 1;
-    background-color: white;
-    height: 350px;
+    background-color: beige;
+    height: auto;
     width: 45%;
     border-radius: 15%;
-    padding-left:5rem;
-    padding-right:10rem;
+    padding-left:10rem;
+    padding-right:15rem;
     padding: 1rem;
     justify-content: left;
     text-align: left;
@@ -398,8 +424,9 @@
   }
 
   .vertical-separator {
+    padding: 0rem;
     border-left: 1px solid #000;
-    height: 80%;
+    height: auto;
     margin: 0 10px;
   }
 /* TRAINING PAGE */
@@ -425,6 +452,12 @@
   margin-top: 1rem;
 }
 
+.imgT0 {
+  height: 2%;
+  width: 4%;
+  margin-top: 1rem;
+}
+
 .rowTF {
   display: flex;
   flex-direction: row;
@@ -434,6 +467,16 @@
   padding-left: 3rem;
   padding-right: 5rem;
   padding-bottom: 4rem;
+}
+.rowTF2 {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  column-gap: 3rem;
+  padding-left: 3rem;
+  padding-right: 5rem;
+  padding-bottom: 1rem;
 }
 
 .imgT2 {
@@ -449,11 +492,13 @@
   width:10rem;
   border-radius: 0px;
   cursor: pointer;
+  margin-top: 2rem;
 }
 
 .btnt{
   background-color: rgb(84, 81, 220);
   color: white;
+  cursor: pointer;
   border: none;
   font-size: large;
   padding-top: 30%;
@@ -464,8 +509,8 @@
 .assessment-main-img{
   padding: 20px 0px 50px 0px;
   background-image: url(https://plus.unsplash.com/premium_photo-1680807869086-e08309acfb24?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8YXNzZXNzbWVudHxlbnwwfHwwfHx8MA%3D%3D&w=1000&q=80);
-  width: 1400px; 
-  height: 600px;
+  width: 1000px; 
+  height: 400px;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -499,7 +544,7 @@
     background-color: black;
     color: white;
     border: none;
-    font-size: 20px;
+    font-size: 15px;
     padding: 1.5rem;
     border-radius: 0px;
     margin: 0px;
@@ -508,21 +553,21 @@
 
 .assessment-content{
   text-align: left;
-  margin: 20px 7%;
+  margin: 20px 12%;
 }
 
 .ass-content p,ul{
   margin: 20px 50px;
 }
 .ass-content h1{
-  font-size: 50px;
+  font-size: 30px;
 }
 .ass-content p{
-  font-size: 25px;
+  font-size: 18px;
   letter-spacing:0.1ch;
 }
 .ass-content li{
-  font-size: 35px;
+  font-size: 25px;
   font-weight: 600;
   margin: 30px;
   text-decoration: underline;
@@ -535,24 +580,136 @@
   margin: 50px 0px;
 }
 
+.register-btn {
+  background-color: black;
+  padding: 0.5rem 1rem;
+  border: 1px solid black;
+  /* background: #fff; */
+  margin: 1.2rem 0;
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.box {
+  border-bottom: 2px solid #000000;
+  padding: 10px;  
+  /* margin: 10px; */
+  justify-content: center;
+  display: flex;
+  align-items:center;
+}
+
+.register-header-box {
+  padding: 10px;  
+  /* margin: 10px; */
+  justify-content: center;
+  display: flex;
+  align-items:center;
+}
+
+.course-dropdown {
+  width: 20%;
+  position: absolute;
+  right: 35%; 
+  font-family: Arial, sans-serif;
+  padding: 5px 0px;
+  font-size: 13px;
+  border-radius: 4px;
+  background-color: #fff;
+  cursor: pointer;
+  transition: border-color 0.3s ease;
+}
+
+
+
+.course-header-text {
+  padding: 1rem; 
+}
+
+
 .coaching-content{
   text-align: left;
   margin: 20px 12%;
 }
   
 .coaching-content h1{
-  font-size: 42px;
+  font-size: 30px;
 }
 
 .coaching-content p{
-  font-size: 28px;
-  margin: 3% 7% 7% 7%;
-  line-height: 40px;
+  font-size: 18px;
+  margin: 2% 7% 7% 7%;
+  line-height: 25px;
 }
 
-<<<<<<< Updated upstream
+.contact-box{
+  background-color: beige;
+  margin: 6% auto;
+  padding: 30px;
+  border: 1px solid black;
+  width: 40%;
+  height: 570px;
+}
 
-=======
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;  /* Span the entire width */
+  background-color: rgba(203, 201, 201, 0.95); /* Near white, slightly translucent */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0; /* Padding top and bottom */
+  z-index: 1000;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Slight shadow to differentiate from the content */
+  transition: all 0.3s ease-in-out;
+}
+
+.popup-inner {
+  max-width: 600px;  /* Maximum width so it doesn't stretch too wide on large screens */
+  text-align: center;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.popup-inner h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #333;  /* Dark gray */
+}
+
+.popup-inner button {
+  padding: 10px 20px;
+  border: none;
+  background-color: #007BFF;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 4px;
+  font-weight: 600;  /* Semi-bold text */
+  transition: background-color 0.2s ease-in-out;
+}
+
+.popup-inner button:hover {
+  background-color: #0056b3;  /* Slightly darker blue on hover */
+}
+
+.contact-box h1{
+  margin: 30px 0px 15% 0px; 
+}
+
+.contact-box p{
+  font-size: 20px;
+}
+
+.ctn-email{
+  color: #0000CD;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
 /* .contact-box{
   margin: 6% auto;
   padding: 30px;
@@ -614,6 +771,28 @@
   color: #0000CD;
   text-decoration: underline;
   cursor: pointer;
+=======
+.filterT{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 3rem;
+  padding-right: 5rem;
+  margin: 20px 0px;
+}
+
+.filterT input{
+  font-size: 22px;
+ margin-right: 10px;
+ padding: 5px;
+}
+
+.filterT button{
+  font-size: 20px;
+  padding: 7px 25px;
+  border: none;
+  color: white;
+  background-color: #000;
 }
 
 .filterT{
@@ -661,4 +840,4 @@
  padding: 10px 10px;
  margin-bottom: 20px;
 }
->>>>>>> Stashed changes
+
