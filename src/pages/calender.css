@@ -77,7 +77,7 @@
     justify-content: left;
     width: 80%;
     margin-left: 10%;
-    height: 150px;
+    height: 7rem;
     background-color: grey;
     opacity: 70%;
     border-radius: 20px;
@@ -126,5 +126,5 @@
     margin-left: 2rem;
     /* height: 250px; */
     overflow-y: scroll; /* Enable vertical scrollbar */
-    border: 1px solid #ccc; /* Optional: add a border */
+    border: 2px solid black; /* Optional: add a border */
   }
