@@ -46,18 +46,22 @@ export default function Assessment(){
 
         const handleCityChange = (event) => {
             const city = event.target.value;
-            console.log(city);
             setSelectedCity(city);
-            // Find the course for the selected city
-            const filtered = courses.filter(course => course.City === city);
-
-            if(filtered.length==0){
-                //show all courses if filter is bad
-                setSelectedCourses(courses);
-            }
-            else{               
-                setSelectedCourses(filtered);
-            }
+            setSelectedCourses(currentCourses => {   
+                //this change allows different filters to exist at the same time
+                if(selectedCity!=''){
+                    currentCourses = courses;
+                }             
+                const filteredCourses = currentCourses.filter(course => course.City === city);    
+                console.log(filteredCourses);
+                if(filteredCourses.length==0){
+                    //show all courses if filter is bad
+                    return courses;
+                }
+                else{               
+                    return filteredCourses;
+                }        
+              });
      
           };
 

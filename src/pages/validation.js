@@ -10,18 +10,19 @@ function ValidationResult(payload){
     };
 
     const validateFullName = (payload) => {
-        const regex = /^[a-zA-Z]+(?: [a-zA-Z]+)*$/;
-        return regex.test(payload['name']);
+        const regex = /^[a-z ]+$/i;
+        const lengthWithoutSpaces = payload['name'].replace(/\s/g, '').length;
+        return regex.test(payload['name']) && lengthWithoutSpaces >= 2;
     };
 
     if (!validateEmail(payload)) {
-        return 'Invalid email address';
+        return 'Please enter valid email address';
       }
       if (!validatePhoneNumber(payload)) {
-        return 'Invalid phone number';
+        return 'Please enter 10 digit phone number';
       }
       if (!validateFullName(payload)) {
-        return 'Invalid full name';
+        return 'Please enter valid fullname with no special character. Minimum two characters';
       }
     else{
         return 'Sign Up Successful!';
