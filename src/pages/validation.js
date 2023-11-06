@@ -15,15 +15,22 @@ function ValidationResult(payload){
         return regex.test(payload['name']) && lengthWithoutSpaces >= 2;
     };
 
+    const validatePassword = (payload) => {
+      return payload['password'].length >= 6 && !/\s/.test(payload['password']);
+  };
+
     if (!validateEmail(payload)) {
-        return 'Please enter valid email address';
-      }
-      if (!validatePhoneNumber(payload)) {
-        return 'Please enter 10 digit phone number';
-      }
-      if (!validateFullName(payload)) {
-        return 'Please enter valid fullname with no special character. Minimum two characters';
-      }
+      return 'Please enter valid email address';
+    }
+    if (!validatePassword(payload)) {
+      return 'Please enter password at least 6 digit and without space';
+    }
+    if (!validatePhoneNumber(payload)) {
+      return 'Please enter 10 digit phone number';
+    }
+    if (!validateFullName(payload)) {
+      return 'Please enter valid fullname with no special character. Minimum two characters';
+    }
     else{
         return 'Sign Up Successful!';
     }
