@@ -20,12 +20,23 @@ export default function Navbar(){
             <CustomLink to="coaching">Coaching</CustomLink>
             <CustomLink to="newcourses">View Courses</CustomLink>
         </ul>
-        <ul id="socials2">
+        <ul className="social-container">
             <br></br>
-            <FontAwesomeIcon id="icon" icon={faYoutube} size="2x" />
-            <FontAwesomeIcon id="icon" icon={faFacebook} size="2x" />
-            <FontAwesomeIcon id="icon" icon={faTwitter} size="2x" />
-            <FontAwesomeIcon id="icon" icon={faInstagram} size="2x" />
+            <a href="https://www.youtube.com"
+                className="youtube social">
+                <FontAwesomeIcon icon={faYoutube} size="2x" />
+            </a>
+            <a href="https://www.facebook.com"
+                className="facebook social">
+                <FontAwesomeIcon icon={faFacebook} size="2x" />
+            </a>
+            <a href="https://www.twitter.com" className="twitter social">
+                <FontAwesomeIcon icon={faTwitter} size="2x" />
+            </a>
+            <a href="https://www.instagram.com"
+                className="instagram social">
+                <FontAwesomeIcon icon={faInstagram} size="2x" />
+            </a>
         </ul>
     </nav>
 }
