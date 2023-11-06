@@ -110,7 +110,7 @@ export default function Home(){
                     <img class='colImg' src='https://www.freeiconspng.com/thumbs/book-icon/book-stack-icon--icon-search-engine-16.png'></img>
                     <br></br>
                     <br></br>
-                    <p> Apex agile experts can perform an Agile Maturity Assessment for your company. We thoroughly
+                    <p> Easy E-Learning agile experts can perform an Agile Maturity Assessment for your company. We thoroughly
                         study your business organization and measure how the software development practices you
                         follow conform to the <a href="https://www.agilealliance.org/agile101/12-principles-behind-the-agile-manifesto/">Agile Manifesto's 12 Agile Principles.</a> 
                     </p>
@@ -124,7 +124,7 @@ export default function Home(){
                     <img class='colImg' src='https://freepngimg.com/save/29395-analyst-photos/512x512'></img>
                     <br></br>
                     <br></br>
-                    <p>Working one on one with your own technology leaders, Apex experts share our decades of Agile  expertise,
+                    <p>Working one on one with your own technology leaders, Easy E-Learning experts share our decades of Agile  expertise,
                      with just the right level of sensitivity and suitability for your business needs. </p>
                 </div>
                 </div>
@@ -136,7 +136,7 @@ export default function Home(){
                     <img class='colImg' src='https://www.freeiconspng.com/thumbs/laptop-icon/laptop-icon-24.png'></img>
                     <br></br>
                     <br></br>
-                    <p>Apex coursework will thoroughly prepare you for Agile certification. Having worked side-by side with the three 
+                    <p>Easy E-Learning coursework will thoroughly prepare you for Agile certification. Having worked side-by side with the three 
                     elite certification agencies, we know just what you will need to gain  certification from the three important certification organizations SAFe, Scrum.org, and Scrum  Alliance.</p>
                 </div>
                 </div>
@@ -154,7 +154,7 @@ export default function Home(){
                     <h1>About Us</h1>
                     <br></br>
                     <br></br>
-                    <p> Apex is a boutique Agile consultancy with decades of software development experience. We  grew up in the era of structured design 
+                    <p> Easy E-Learning is a boutique Agile consultancy with decades of software development experience. We  grew up in the era of structured design 
                     methodologies, adapted our learning to the rapid  development approaches, and graduated to Agile. Wherever you are in your software evolution,  
                     we are there to help in your journey.
                     </p>
