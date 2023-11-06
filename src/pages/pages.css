@@ -526,8 +526,8 @@
 .coaching-main-img{
   padding: 20px 0px 50px 0px;
   background-image: url(https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/sites/133325/images/nwRzuUwXQwCqfaSqpeMt_Blog-_What_is_coaching-_AIPC.jpg);
-  width: 1400px; 
-  height: 600px;
+  width: 1200px; 
+  height: 400px;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -541,22 +541,40 @@
 }
 
 .ctu-btn{
-    background-color: black;
-    color: white;
-    border: none;
-    font-size: 15px;
-    padding: 1.5rem;
-    border-radius: 0px;
-    margin: 0px;
-    cursor: pointer;
+  background-color: black;
+  color: white;
+  border: none;
+  font-size: 15px;
+  padding: 1.5rem;
+  border-radius: 0px;
+  margin: 0px;
+  cursor: pointer;
 }
 
 .assessment-content{
   text-align: left;
-  margin: 20px 12%;
+  margin: 20px 17%;
 }
 
-.ass-content p,ul{
+.ass-content h1{
+  font-size: 50px;
+  margin: 30px 0px;
+  text-align: center;
+}
+.ass-content p{
+  font-size: 22px;
+  letter-spacing:0.1ch;
+  line-height: 25px;
+}
+.ass-con-sub{
+  margin: 0px 50px;
+}
+.ass-con-sub h3{
+  font-size: 38px;
+  font-weight: 700;
+  margin: 20px 0px;
+}
+/* .ass-content p,ul{
   margin: 20px 50px;
 }
 .ass-content h1{
@@ -571,7 +589,7 @@
   font-weight: 600;
   margin: 30px;
   text-decoration: underline;
-}
+} */
 .ass-content-2 li.ass-titles::marker{
   color: #000;
 }
@@ -644,14 +662,14 @@
   line-height: 25px;
 }
 
-.contact-box{
+/* .contact-box{
   background-color: beige;
   margin: 6% auto;
   padding: 30px;
   border: 1px solid black;
   width: 40%;
   height: 570px;
-}
+} */
 
 .popup {
   position: fixed;
@@ -841,3 +859,38 @@
  margin-bottom: 20px;
 }
 
+.terms{
+  margin-bottom: 5%;
+}
+
+.terms h1{
+   font-size: 48px;
+   margin: 30px;
+}
+
+.terms-content h2{
+  font-size: 30px;
+}
+
+.terms-content h4{
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.terms-content{
+  text-align: left;
+  margin: 30px 10%;
+}
+
+.terms-content P{
+  margin: 15px;
+  font-size: 18px;
+}
+
+.terms-content ul{
+  margin: 0px 40px;
+}
+.terms-content li{
+  margin: 5px 0px;
+  font-size: 18px;
+}
