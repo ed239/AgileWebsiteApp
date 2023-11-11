@@ -1,8 +1,10 @@
 import './pages.css'
 import './calender.css'
-import imageMap from './ImageMap'
+import { partnerMap, courseTypeMap } from './partnerMap'
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate} from 'react-router-dom';
+import ReactDatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
 
 export default function Assessment(){
         const navigate = useNavigate();
@@ -11,7 +13,12 @@ export default function Assessment(){
         const [courses, setCourses] = useState(null);
         const [selectedCourses, setSelectedCourses] = useState(null);
         const [selectedCity, setSelectedCity] = useState('');
+        const [selectedPartner, setSelectedPartner] = useState('');
+        const [selectedCourseType, setSelectedCourseType] = useState('');
         const [loading, setLoading] = useState(true);
+        const [startDate, setStartDate] = useState(new Date());
+        const [endDate, setEndDate] = useState(new Date());
+        const [isDatePickerVisible, setDatePickerVisibility] = useState(false);
 
         
       
@@ -45,15 +52,15 @@ export default function Assessment(){
         }
 
         const handleCityChange = (event) => {
+            allCourse();
             const city = event.target.value;
             setSelectedCity(city);
             setSelectedCourses(currentCourses => {   
                 //this change allows different filters to exist at the same time
-                if(selectedCity!=''){
+                if(city!=''){
                     currentCourses = courses;
                 }             
-                const filteredCourses = currentCourses.filter(course => course.City === city);    
-                console.log(filteredCourses);
+                const filteredCourses = currentCourses.filter(course => course.City === city);  
                 if(filteredCourses.length==0){
                     //show all courses if filter is bad
                     return courses;
@@ -61,8 +68,53 @@ export default function Assessment(){
                 else{               
                     return filteredCourses;
                 }        
-              });
-     
+              });  
+          };
+
+          const handlePartnerChange = (event) => {
+            allCourse();
+            const partner = event.target.value;
+            
+            setSelectedPartner(partner);
+            setSelectedCourses(currentCourses => { 
+                if(partner!=''){
+                    currentCourses = courses;
+                } 
+                else{
+                    return courses
+                }         
+                const filteredCourses = currentCourses.filter(course => partnerMap[partner].includes(course.Title));  
+                if(filteredCourses.length==0){
+                    //show all courses if filter is bad
+                    return courses;
+                }
+                else{               
+                    return filteredCourses;
+                }        
+              });  
+          };
+
+          const handleCourseTypeChange = (event) => {
+            allCourse();
+            const courseType = event.target.value;
+            
+            setSelectedCourseType(courseType);
+            setSelectedCourses(currentCourses => { 
+                if(courseType!=''){
+                    currentCourses = courses;
+                } 
+                else{
+                    return courses
+                }         
+                const filteredCourses = currentCourses.filter(course => courseTypeMap[courseType].includes(course.Title));  
+                if(filteredCourses.length==0){
+                    //show all courses if filter is bad
+                    return courses;
+                }
+                else{               
+                    return filteredCourses;
+                }        
+              });  
           };
 
       
@@ -85,7 +137,46 @@ export default function Assessment(){
             navigate('/getcourse/'+title);
         };
 
+        const allCourse = () =>{
+            setSelectedCourses(courses);
+            setSelectedCity('');
+            setStartDate(new Date())
+            setEndDate(new Date())
+            setSelectedPartner('');
+        }
 
+        const onDateChange = (dates) => {
+            allCourse();
+            const [start, end] = dates;
+            setStartDate(start);
+            setEndDate(end);
+            
+          
+            // Hide the date picker when both dates are selected
+            if (start && end) {              
+                setDatePickerVisibility(false);
+            }
+
+            if (start && end) {
+                var currentCourses = selectedCourses;
+                setSelectedCourses(currentCourses => {                 
+                return filterCoursesByDate(start, end);      
+                });
+            }
+            
+     
+          };
+
+          const toggleDatePicker = () => {
+            setDatePickerVisibility(!isDatePickerVisible);
+          };
+
+        const filterCoursesByDate = (start, end) => {
+            return selectedCourses.filter(selectedCourse => {
+                const selectedCourseDate = new Date(selectedCourse.StartDate);
+                return selectedCourseDate >= start && selectedCourseDate <= end;
+            });
+        };
         
       
 
@@ -100,17 +191,29 @@ export default function Assessment(){
             <div className="c1">
             <br></br>
                 <h3>Filters</h3>
-                <div class="NCFbutton">
-                    <button class="btnncf">All Courses</button>
+                <div class="NCFbutton" onClick={allCourse}>
+                    <button class="btnncf" >All Courses</button>
                 </div>
                 <div class="NCFbutton">
-                    <button class="btnncf">All Course Type</button>
+                    <select class="btnncf" value={selectedPartner} onChange={handleCourseTypeChange}>
+                                <option value="">Course Type</option>
+                                {Object.keys(courseTypeMap).map((item, index) => (
+                                <option key={index} value={item}>{item}</option>
+                                ))}
+                    </select>
                 </div>
-                <div class="NCFbutton">
-                    <button class="btnncf">Calendar</button>
-                </div>
-                <div class="NCFbutton">
-                    <button class="btnncf">All Countries</button>
+                <div class="NCFbutton" onClick={toggleDatePicker}>
+                    <button class="btnncf" >Calendar</button>
+                        {isDatePickerVisible && (
+                            <ReactDatePicker
+                                selected={startDate}
+                                onChange={onDateChange}
+                                startDate={startDate}
+                                endDate={endDate}
+                                selectsRange
+                                inline
+                            />
+                        )}
                 </div>
                 <div class="NCFbutton">
                     <select class="btnncf" value={selectedCity} onChange={handleCityChange}>
@@ -122,12 +225,14 @@ export default function Assessment(){
                 </div>
                 
                 <div class="NCFbutton">
-                    <button class="btnncf">All Trainers</button>
+                    <select class="btnncf" value={selectedPartner} onChange={handlePartnerChange}>
+                            <option value="">Partners</option>
+                            {Object.keys(partnerMap).map((item, index) => (
+                            <option key={index} value={item}>{item}</option>
+                            ))}
+                    </select>
                 </div>
-                <div class="NCFbutton">
-                    <button class="btnncf">All Partners</button>
-                </div>
-                <div class="NCFbuttonClear">
+                <div class="NCFbuttonClear"  onClick={allCourse}>
                     <button class="btnncfClear"><b>Clear Filters</b></button>
                 </div>
             </div>
