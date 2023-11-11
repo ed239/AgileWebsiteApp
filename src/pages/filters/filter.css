@@ -1,0 +1,15 @@
+.bodyT {
+    background-color: beige;
+    padding-top: 2rem;
+    padding-bottom: 3rem;
+  }
+
+  .rowT {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    column-gap: 3rem;
+    padding-left: 3rem;
+    padding-right: 5rem;
+  }
