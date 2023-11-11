@@ -1,10 +1,56 @@
-import './pages.css'
+import './pages.css';
 import {Link} from 'react-router-dom';
-import imageMap from './ImageMap'
+import imageMap from './ImageMap';
+import Dropdown from 'react-bootstrap/Dropdown';
+import DropdownButton from 'react-bootstrap/DropdownButton';
+
+
+
 export default function Training(){
     return (
         <body class="bodyT">
             <h1>Public & Corporate Training</h1>
+            <br></br>
+            <br></br>
+            <div className='row1'>
+            <Dropdown>
+                <Dropdown.Toggle className="dropdown-basic">
+                Course Type ▾
+                </Dropdown.Toggle>
+
+                <Dropdown.Menu className="dropdown">
+                    <Dropdown.Item className="text" href="/coursetypefilter">Product Owner</Dropdown.Item>
+                    <Dropdown.Item className="text" href="/scrummaster">Scrum Master</Dropdown.Item>
+                    <Dropdown.Item className="text" href="/developer">Developer</Dropdown.Item>
+                    <Dropdown.Item className="text" href="/leader">Leader</Dropdown.Item>
+                </Dropdown.Menu>
+            </Dropdown>
+
+            <Dropdown>
+                <Dropdown.Toggle className="dropdown-basic">
+                Certifying Body ▾
+                </Dropdown.Toggle>
+
+                <Dropdown.Menu className="dropdown">
+                    <Dropdown.Item className="text" href="/leadership">Leadership</Dropdown.Item>
+                    <Dropdown.Item className="text" href="/scaledagile">Scaled Agile 5.0</Dropdown.Item>
+                    <Dropdown.Item className="text" href="/scrumorg">Scrum.org</Dropdown.Item>
+                    <Dropdown.Item className="text" href="/scrumalliance">Scrum Alliance</Dropdown.Item>
+                    <Dropdown.Item className="text" href="/pmi">PMI</Dropdown.Item>
+                </Dropdown.Menu>
+            </Dropdown>
+
+            <Dropdown>
+                <Dropdown.Toggle className="dropdown-basic">
+                All Courses ▾
+                </Dropdown.Toggle>
+
+                <Dropdown.Menu className="dropdown">
+                    <Dropdown.Item className="text" href="/newcourses">Calender</Dropdown.Item>
+                </Dropdown.Menu>
+            </Dropdown>
+            
+            </div>
             <div class="rowT">
                 <h1>Public Training</h1>
             </div>

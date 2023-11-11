@@ -15,6 +15,15 @@ import NewCourses from './pages/NewCourses'
 //request samples
 import GetCourse from './pages/GetCourse'
 import Login from './pages/Login';
+import CourseTypeFilter from './pages/CourseTypeFilter';
+import ScrumMaster from './pages/filters/ScrumMaster';
+import Developer from './pages/filters/Developer';
+import Leader from './pages/filters/Leader';
+import Leadership from './pages/filters/Leadership';
+import ScaledAgile from './pages/filters/ScaledAgile';
+import Scrumorg from './pages/filters/Scrumorg';
+import Scrumalliance from './pages/filters/Scrumalliance';
+import PMI from './pages/filters/PMI';
 
 import { Route, Routes, BrowserRouter as Router} from "react-router-dom"
 
@@ -57,6 +66,16 @@ function App(){
           <Route path="/getCourse/:courseName" element={<GetCourse />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/coursetypefilter" element={<CourseTypeFilter />} />
+          <Route path="/scrummaster" element={<ScrumMaster />} />
+          <Route path="/developer" element={<Developer />} />
+          <Route path="/leader" element={<Leader />} />
+          <Route path="/leadership" element={<Leadership />} />
+          <Route path="/scaledagile" element={<ScaledAgile />} />
+          <Route path="/scrumorg" element={<Scrumorg />} />
+          <Route path="/scrumalliance" element={<Scrumalliance />} />
+          <Route path="/pmi" element={<PMI />} />
+          
         </Routes>
       <Footer />
       </div>
