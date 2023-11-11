@@ -121,11 +121,13 @@ body{
   [data-reach-menu-button][aria-expanded="true"] {
     border-radius: 0 0 1px 1px;
     background-color: #2c5d4d;
+    cursor: pointer;
   }
   
   [data-reach-menu-list] {
     border: 5px solid  rgb(47, 218, 141);
     background-color:  rgb(47, 218, 141);
+    cursor: pointer;
   }
 
 

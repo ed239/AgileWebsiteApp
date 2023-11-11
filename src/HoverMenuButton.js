@@ -31,6 +31,15 @@ export default function CategoryDropdown(props) {
     setHasClicked(false);
   }, [hasClicked]);
 
+  const scrollToBottom = () => {
+    const windowHeight = window.innerHeight
+    window.scrollTo(0,5000)
+  }
+  const scrollToTop = () => {
+    const windowHeight = window.innerHeight
+    window.scrollTo(0, 130)
+  }
+
   return (
     <Menu>
       <MenuButton class="MenuButton"
@@ -67,13 +76,15 @@ export default function CategoryDropdown(props) {
           onSelect={() => {
             setIsOpen(false);
           }}
+          onClick={scrollToTop}
         >
-          Public
+         Public
         </MenuItem>
         <MenuItem
           onSelect={() => {
             setIsOpen(false);
           }}
+          onClick={scrollToBottom}
         >
           Corporate
         </MenuItem>

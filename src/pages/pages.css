@@ -435,6 +435,57 @@
   padding-top: 2rem;
   padding-bottom: 3rem;
 }
+.row1 {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 90%;
+  column-gap: 2rem;
+  padding-left: 3rem;
+  padding-right: 3rem;
+  margin-left: 30%;
+}
+.NCFbutton1 {
+  background-color: black;
+  justify-content: center;
+  font-size: 6px;
+  padding: 1.5rem;
+  margin: 0px;
+  cursor: pointer;
+  width: 9rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.btnncf1{
+  background-color: black;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown-basic{
+  background-color: black;
+  color: white;
+  padding: 1.5rem;
+  cursor:pointer;
+  width:10rem;
+
+}
+.dropdown{
+  display: flex;
+  flex-direction: column;
+  background-color: grey;
+  color: white;
+  width:10rem;
+
+}
+.text{
+  color:white;
+  text-decoration: none;
+  padding-left: 1.3rem;
+  padding-right: 1.1rem;
+}
 
 .rowT {
   display: flex;
