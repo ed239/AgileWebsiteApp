@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 export default function ScaledAgile(){
     const navigate = useNavigate();
     return(
-        <body class="bodyF">
+        <body class="bodyT">
         <div class="rowT">
                 <h1>Scaled Agile 5.0</h1>
         </div>
