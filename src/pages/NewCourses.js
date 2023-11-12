@@ -153,21 +153,23 @@ export default function Assessment(){
             
           
             // Hide the date picker when both dates are selected
-            if (start && end) {              
-                setDatePickerVisibility(false);
-            }
-
-            if (start && end) {
+            if (start && end) {           
                 var currentCourses = selectedCourses;
                 setSelectedCourses(currentCourses => {                 
                 return filterCoursesByDate(start, end);      
-                });
+                });   
+                setDatePickerVisibility(false);
             }
+
+
             
      
           };
 
-          const toggleDatePicker = () => {
+          const toggleDatePicker = (event) => {
+            if (event.target.closest('.react-datepicker')) {
+                return;
+              }
             setDatePickerVisibility(!isDatePickerVisible);
           };
 

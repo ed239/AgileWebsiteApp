@@ -1,54 +1,60 @@
 import './pages.css';
 import {Link} from 'react-router-dom';
+import {useState, useEffect} from 'react';
 import imageMap from './ImageMap';
 import Dropdown from 'react-bootstrap/Dropdown';
 import DropdownButton from 'react-bootstrap/DropdownButton';
+import { useParams, useNavigate} from 'react-router-dom';
 
 
 
 export default function Training(){
+
+    const navigate = useNavigate();
+
+
+    const handleChange = (event) => {
+        const url = event.target.value;
+        if (url!==''){
+            navigate(url);
+        }         
+      };
+    
+
+
     return (
         <body class="bodyT">
             <h1>Public & Corporate Training</h1>
             <br></br>
             <br></br>
             <div className='row1'>
-            <Dropdown>
-                <Dropdown.Toggle className="dropdown-basic">
-                Course Type ▾
-                </Dropdown.Toggle>
+            <div className="dropdown-basic">
+                <select className="btnncf" onChange={handleChange}>
+                    <option value="">Course Type</option>
+                    <option value="/coursetypefilter">Product Owner</option>
+                    <option value="/scrummaster">Scrum Master</option>
+                    <option value="/developer">Developer</option>
+                    <option value="/leader">Leader</option>
+                </select>
+            </div>
 
-                <Dropdown.Menu className="dropdown">
-                    <Dropdown.Item className="text" href="/coursetypefilter">Product Owner</Dropdown.Item>
-                    <Dropdown.Item className="text" href="/scrummaster">Scrum Master</Dropdown.Item>
-                    <Dropdown.Item className="text" href="/developer">Developer</Dropdown.Item>
-                    <Dropdown.Item className="text" href="/leader">Leader</Dropdown.Item>
-                </Dropdown.Menu>
-            </Dropdown>
+            <div className="dropdown-basic">
+                <select className="btnncf" onChange={handleChange}>
+                    <option value="">Certify Body</option>
+                    <option value="/leadership">Leadership</option>
+                    <option value="/scaledagile">Scaled Agile 5.0</option>
+                    <option value="/scrumorg">Scrum.org</option>
+                    <option value="/scrumalliance">Scrum Alliance</option>
+                    <option value="/pmi">PMI</option>
+                </select>
+            </div>
 
-            <Dropdown>
-                <Dropdown.Toggle className="dropdown-basic">
-                Certifying Body ▾
-                </Dropdown.Toggle>
-
-                <Dropdown.Menu className="dropdown">
-                    <Dropdown.Item className="text" href="/leadership">Leadership</Dropdown.Item>
-                    <Dropdown.Item className="text" href="/scaledagile">Scaled Agile 5.0</Dropdown.Item>
-                    <Dropdown.Item className="text" href="/scrumorg">Scrum.org</Dropdown.Item>
-                    <Dropdown.Item className="text" href="/scrumalliance">Scrum Alliance</Dropdown.Item>
-                    <Dropdown.Item className="text" href="/pmi">PMI</Dropdown.Item>
-                </Dropdown.Menu>
-            </Dropdown>
-
-            <Dropdown>
-                <Dropdown.Toggle className="dropdown-basic">
-                All Courses ▾
-                </Dropdown.Toggle>
-
-                <Dropdown.Menu className="dropdown">
-                    <Dropdown.Item className="text" href="/newcourses">Calender</Dropdown.Item>
-                </Dropdown.Menu>
-            </Dropdown>
+            <div className="dropdown-basic">
+                <select className="btnncf" onChange={handleChange}>
+                    <option value="">All Courses</option>
+                    <option value="/newcourses">Calender</option>
+                </select>
+            </div>
             
             </div>
             <div class="rowT">
