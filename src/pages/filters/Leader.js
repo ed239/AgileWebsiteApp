@@ -1,10 +1,11 @@
 import './filter.css';
 import {Link} from 'react-router-dom';
 import imageMap from '../ImageMap.js';
+import { useNavigate } from 'react-router-dom';
 export default function Leader(){
-
+    const navigate = useNavigate();
     return(
-        <body class="bodyT">
+        <body class="bodyF">
         <div class="rowT">
                 <h1>Leader</h1>
         </div>
@@ -14,7 +15,7 @@ export default function Leader(){
                     <img class="imgT2" src={imageMap["Certified Agile Leadership (CAL1)"]}></img>
             </Link>
         </div>
-       
+        <button class="undo-btn" onClick={() => navigate(-1)}>Undo Filter</button>
         </body>
     )
 }

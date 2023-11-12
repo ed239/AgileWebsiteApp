@@ -1,11 +1,12 @@
-import './pages.css';
+import './filter.css';
 import {Link} from 'react-router-dom';
-import imageMap from './ImageMap';
+import imageMap from '../ImageMap';
+import { useNavigate } from 'react-router-dom';
 
 export default function CourseTypeFilter(){
-
+    const navigate = useNavigate();
     return(
-        <body class="bodyT">
+        <body class="bodyF">
         <div class="rowT">
                 <h1>Product Owner</h1>
             </div>
@@ -23,9 +24,9 @@ export default function CourseTypeFilter(){
             <Link to="/getcourse/CSPO - Certified Scrum Product Owner">
                 <img class="imgT2" src={imageMap["CSPO - Certified Scrum Product Owner"]}></img>
             </Link>
+            
             </div>
-            <br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br>
-            <br></br>
+            <button class="undo-btn" onClick={() => navigate(-1)}>Undo Filter</button>
         </body>
 
 

@@ -1,11 +1,12 @@
 import './filter.css';
 import imageMap from '../ImageMap.js';
 import {Link} from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 export default function ScaledAgile(){
-
+    const navigate = useNavigate();
     return(
-        <body class="bodyT">
+        <body class="bodyF">
         <div class="rowT">
                 <h1>Scaled Agile 5.0</h1>
         </div>
@@ -52,7 +53,7 @@ export default function ScaledAgile(){
                 </Link>
         </div>
         
-        
+        <button class="undo-btn" onClick={() => navigate(-1)}>Undo Filter</button>
        
         </body>
     )
