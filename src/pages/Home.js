@@ -1,5 +1,5 @@
 import "./pages.css"
-import React, { useRef } from "react";
+import React, { useRef,  useState} from "react";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import Carousel, { CarouselItem } from "./carousel";
@@ -13,7 +13,10 @@ import pic2 from "./images/2.png";
 import pic3 from "./images/3.png";
 import pic4 from "./images/4.png";
 
+
 export default function Home(){
+
+    const [showPopup, setShowPopup] = useState(false);
     const navigate = useNavigate();
 
     const navigateToContactUs = () => {
@@ -279,7 +282,20 @@ export default function Home(){
         <FormGroup class="checkbox">
             <FormControlLabel control={<Checkbox defaultChecked />} label="I agree to recieve sponsored emails" />
         </FormGroup>
-        <button type="submit" className="submit-btn">Sign Up</button>
+        <button type="submit" className="register-btn" onClick={() => setShowPopup(true)}>Sign Up</button>
+        {showPopup && (
+            <div className="popup">
+                <br></br>
+                <div className="popup-inner">
+                    <h2>Success!</h2>
+                    <div>You have been added to the mailing list!</div>
+                    <br></br>
+                    <br></br>
+                    <button onClick={() => window.location.reload(false)}>Close</button>
+                </div>
+                
+            </div>
+            )}
         
     </div>
         

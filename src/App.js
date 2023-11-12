@@ -15,7 +15,7 @@ import NewCourses from './pages/NewCourses'
 //request samples
 import GetCourse from './pages/GetCourse'
 import Login from './pages/Login';
-import CourseTypeFilter from './pages/CourseTypeFilter';
+import CourseTypeFilter from './pages/filters/CourseTypeFilter';
 import ScrumMaster from './pages/filters/ScrumMaster';
 import Developer from './pages/filters/Developer';
 import Leader from './pages/filters/Leader';
