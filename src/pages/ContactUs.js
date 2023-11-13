@@ -4,7 +4,6 @@ import FormControl from '@mui/material/FormControl';
 
 export default function ContactUs(){
     return (
-
         <div className="contact-box">
             <h1>Easy E-Learning</h1>
            
@@ -22,13 +21,16 @@ export default function ContactUs(){
                     <input type='tel' id="phone-number" name='phone'/>
                     <label>What can we help you with?</label>
                     <textarea id="message" name="message" rows="8" cols="60" />
+
+                    {/* Submit Button */}
+                    <button type="submit" className="submit-btn">
+                        Submit
+                    </button>
                 </FormControl>
               </div>
             </div>
 
         </div>
     )
-    
-
-
 }
+
