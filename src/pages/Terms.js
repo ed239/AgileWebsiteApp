@@ -114,7 +114,7 @@ their products and services.</p>
               <div className='terms-content'>
                 <h2>How to contact us</h2>
                 <p>If you have any questions about Easy E-Learning’s privacy policy, the data we hold on you, or you would like to exercise one of your data protection rights, please do not hesitate to contact us.</p>
-                <p>Email us at: info@Easy E-Learningagility.com</p>
+                <p>Email us at: info@easyelearningagility.com</p>
               </div>
 
 
