@@ -23,6 +23,7 @@
   #grid0 {
     display: grid;
     height: 8rem;
+    
     grid-template-columns: repeat(3, 1fr);
     column-gap: 25rem;
     padding-right: 2rem;
