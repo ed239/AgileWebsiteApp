@@ -10,19 +10,27 @@ function ValidationResult(payload){
     };
 
     const validateFullName = (payload) => {
-        const regex = /^[a-zA-Z]+(?: [a-zA-Z]+)*$/;
-        return regex.test(payload['name']);
+        const regex = /^[a-z ]+$/i;
+        const lengthWithoutSpaces = payload['name'].replace(/\s/g, '').length;
+        return regex.test(payload['name']) && lengthWithoutSpaces >= 2;
     };
 
+    const validatePassword = (payload) => {
+      return payload['password'].length >= 6 && !/\s/.test(payload['password']);
+  };
+
     if (!validateEmail(payload)) {
-        return 'Invalid email address';
-      }
-      if (!validatePhoneNumber(payload)) {
-        return 'Invalid phone number';
-      }
-      if (!validateFullName(payload)) {
-        return 'Invalid full name';
-      }
+      return 'Please enter valid email address';
+    }
+    if (!validatePassword(payload)) {
+      return 'Please enter password at least 6 digit and without space';
+    }
+    if (!validatePhoneNumber(payload)) {
+      return 'Please enter 10 digit phone number';
+    }
+    if (!validateFullName(payload)) {
+      return 'Please enter valid fullname with no special character. Minimum two characters';
+    }
     else{
         return 'Sign Up Successful!';
     }
