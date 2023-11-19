@@ -10,17 +10,17 @@ export default function AboutUs(){
                         <br></br>
                         <h2>Who We Are</h2>
                         <br></br>
-                        <p>Apex is a boutique consulting firm with decades of software development experience. We grew  up in the era of structured design methodologies, adapted 
+                        <p>Easy E-Learning is a boutique consulting firm with decades of software development experience. We grew  up in the era of structured design methodologies, adapted 
                         our learnings to the rapid development  approaches, and graduated to Agile. Having partnered with many of the original Agile founders,
                          we worked hand-in-hand with them  to implement Agile software development practices at companies like IBM, Lotus and Verizon.  Raj Heda, 
-                         President and CEO of Apex, is a leading author, teacher and world-renowned industry  consultant. Our in-house experts are master’s degree 
+                         President and CEO of Easy E-Learning, is a leading author, teacher and world-renowned industry  consultant. Our in-house experts are master’s degree 
                          students at Boston University’s  Metropolitan College, with decades of industry experience.</p>
                          <br></br>
                          <ul style={{marginLeft: '2.1em'}}>
-                            <li>Devin Dumais, Andras Palfi, and Shailesh Tamrakar are Apex’s three lead development  consultants. </li>
-                            <li>Keith Gutfreund leads Apex’s Product Owner and Content Writer teams. Keith studied  Electrical and 
+                            <li>Devin Dumais, Andras Palfi, and Shailesh Tamrakar are Easy E-Learning's three lead development  consultants. </li>
+                            <li>Keith Gutfreund leads Easy E-Learning Product Owner and Content Writer teams. Keith studied  Electrical and 
                                 Computer Engineering and has been a hardware and software developer for  over 4 decades. </li>
-                            <li>Po-Han (John) Huang and Daniela lead Apex’s Quality certification team. • Mingyang Zu is lead consultant for Apex’s Business Analyst certification team.</li>
+                            <li>Po-Han (John) Huang and Daniela lead Easy E-Learning's Quality certification team. • Mingyang Zu is lead consultant for Easy E-Learning’s Business Analyst certification team.</li>
                         </ul>
                 </div>
                 <div class='grey-columnAU'>
@@ -49,15 +49,15 @@ export default function AboutUs(){
                         <br></br>
                         <h2>What We Do</h2>
                         <br></br>
-                        <h4>Apex can help you succeed in three ways: </h4>
+                        <h4>Easy E-Learning can help you succeed in three ways: </h4>
                         <br></br>
                         <ul style={{marginLeft: '2.1em'}}>
                             <li>Training & Certification: our 1-2 day training courses are specifically designed to prepare  you for the Agile certification exams from SAFe, 
-                                Scrum.org, and Scrum Alliance. You  can train with confidence due to our Apex guarantee: if you do not succeed in passing the  certification, 
+                                Scrum.org, and Scrum Alliance. You  can train with confidence due to our Easy E-Learning guarantee: if you do not succeed in passing the  certification, 
                                 you may re-enroll in the training at no additional cost.  </li>
-                            <li>Coaching: Apex offers customized coaching from our expert staff. We can coach your  team, your executives, and your organization. 
+                            <li>Coaching: Easy E-Learning offers customized coaching from our expert staff. We can coach your  team, your executives, and your organization. 
                                 Please contact us for more details.</li>
-                            <li>Assessment: Apex uniquely offers a suite of detailed assessments to determine your  
+                            <li>Assessment: Easy E-Learning uniquely offers a suite of detailed assessments to determine your  
                                specific organization’s capabilities and needs. See our different assessment offerings 
                                here  (click link to Assessment page) for more details.</li>
                         </ul>
