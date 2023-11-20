@@ -264,13 +264,14 @@
   .submit-btn {
     padding: 0.5rem 1rem;
     border: 1px solid black;
-    background: #fff;
+    background: black; /* Updated background color */
     margin: 1.2rem 0;
-    color: black;
+    color: white; /* Ensuring text is visible on the black background */
     font-size: 0.9rem;
     font-weight: 700;
     cursor: pointer;
-  }
+}
+
   .dialog-box {
     margin: 0;
     display: grid;
