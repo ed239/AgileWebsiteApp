@@ -1,12 +1,11 @@
 import './pages.css'
 import pic5 from "./images/5.jpeg";
 import FormControl from '@mui/material/FormControl';
-import React, { useState } from 'react';
 
 
 
 export default function ContactUs(){
-
+    
     return (
         <div className="contact-box">
             <h1>Easy E-Learning</h1>
@@ -28,22 +27,9 @@ export default function ContactUs(){
                     <textarea id="message" name="message" rows="8" cols="60" />
 
                     {/* Submit Button */}
-                    <button type="submit" className="submit-btn" onClick={handleSubmit}>
+                    <button type="submit" className="submit-btn">
                         Submit
                     </button>
-                    {showPopup && (
-                        <div className="popup">
-                            <br></br>
-                            <div className="popup-inner">
-                                <h2>Info</h2>
-                                <div>{ValidationResult()}</div>
-                                <br></br>
-                                <br></br>
-                                <button onClick={() => ClosePopup()}>Close</button>
-                            </div>
-                            
-                        </div>
-                    )}
                 </FormControl>
               </div>
             </div>

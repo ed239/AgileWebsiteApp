@@ -116,7 +116,7 @@ export default function Register(){
 
         </form>
         </div>
-        <button type="submit" className="register-btn" onClick={() => signUp()}>Register</button>
+        <button type="submit" className="register-btn" onClick={() => signUp()}>Sign Up</button>
         {showPopup && (
             <div className="popup">
                 <br></br>

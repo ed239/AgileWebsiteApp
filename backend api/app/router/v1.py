@@ -5,14 +5,11 @@ from app.config.Config import settings, module_dir
 from fastapi import APIRouter, Depends, status
 from app.schema.AuthSchema import AuthSchema, SignupSchema
 from app.schema.CourseSchema import AddCourseSchema
-from app.schema.EmailSchema import EmailSchema
 from app.controller.DBConn import mydb
 from app.controller.ClsPasswordHandler import PasswordHandler
 from app.controller.ClsTokenHandler import TokenHandler
 from app.controller.CourseServicer import CourseServicer
-from app.controller.EmailService import EmailService
 from app.util.ClsJwtBearer import JWTBearer, get_token_user
-
 
 log = logging.getLogger("asyncio")
 router = APIRouter()
@@ -154,17 +151,3 @@ def get_course_info(course: str):
     log.info("Server.get_course_info finished!")
     return course_info
 
-
-
-@router.post(
-    "/send-email",
-    summary="Send email",
-    description="Send email",
-    status_code=status.HTTP_201_CREATED,
-)
-def send_email(schema: EmailSchema):
-    email_svc = EmailService()
-    response = email_svc.sendEmail(schema.name, schema.phone, schema.email, schema.message)
-
-    log.info("Server.send_email finished!")
-    return response
