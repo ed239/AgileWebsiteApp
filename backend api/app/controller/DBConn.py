@@ -32,5 +32,6 @@ def get_client():
 
 myclient = get_client()
 mydb = myclient.get_database(settings.auth_db)
+print(mydb)
 
 

@@ -18,11 +18,11 @@ class Settings(BaseSettings):
     email_password: str = Field(env="EMAIL_PASSWORD")
 
     mongodb_auth_source: str = Field(env="MONGODB_AUTH_SOURCE", default="admin")
-    mongodb_database: str = Field(env="MONGODB_DATABASE", default="Authentication")
+    mongodb_database: str = Field(env="MONGODB_DATABASE", default="admin")
     mongodb_auth_mechanism: str = Field(env="MONGODB_AUTH_MECHANISM", default="SCRAM-SHA-1")
     auth_db: str = Field(env="AUTH_DB", default="BettingApp")
     auth_col: str = Field(env="AUTH_COL", default="Authentication")
-    mongodb_retry_writes: bool = Field(env="MONGODB_RETRY_WRITES", default=False)
+    mongodb_retry_writes: bool = Field(env="MONGODB_RETRY_WRITES", default=True)
     mongodb_ssl: bool = Field(env="MONGODB_SSL", default=True)
     mongodb_tlsallowinvalidhostnames: bool = Field(env="MONGODB_TLS_ALLOW_INVALID_HOSTNAME", default=True)
 
