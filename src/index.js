@@ -4,22 +4,13 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import "./styles.css"
-import { BrowserRouter, Route, Routes } from 'react-router-dom'; // Replace "Switch" with "Routes"
-import ScrollToTop from './ScrollToTop.js';
-import ContactUs from './pages/ContactUs';
-import Home from './pages/Home';
-
+import {BrowserRouter} from "react-router-dom"
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-    <App />
-      <ScrollToTop />
-      <Routes>
-        <Route path="/contact" component={ContactUs} />
-        <Route path="/" component={Home} />
-      </Routes>
+      <App />
     </BrowserRouter>
   </React.StrictMode>
 );
