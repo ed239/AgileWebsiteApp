@@ -2,7 +2,10 @@ import './pages.css'
 import pic5 from "./images/5.jpeg";
 import FormControl from '@mui/material/FormControl';
 
+
+
 export default function ContactUs(){
+    
     return (
         <div className="contact-box">
             <h1>Easy E-Learning</h1>
@@ -13,6 +16,7 @@ export default function ContactUs(){
               </div>
               <div>
                 <FormControl variant='standard' className='cnt-form'>
+                    <h2>Contact Us</h2>
                     <label>Name</label>
                     <input type='text' id="name" name='name'/>
                     <label>Email Address</label>
