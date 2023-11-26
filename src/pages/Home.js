@@ -198,7 +198,7 @@ export default function Home(){
                     <br></br>
                     <h3>SAFe</h3>
                     <br></br>
-                    <img class='partnerImg' src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQT9U3eojLRvexjqYpj4YNNhVWfkJz1JWuIdUSytD7_&s'></img>
+                    <a href='https://scaledagile.com'><img class='partnerImg' src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQT9U3eojLRvexjqYpj4YNNhVWfkJz1JWuIdUSytD7_&s'></img></a>
                     
                 </div>
                 </div>
@@ -207,7 +207,7 @@ export default function Home(){
                     <br></br>
                     <h3>Scrum Alliance</h3>
                     <br></br>
-                    <img class='partnerImg' src='https://theme.zdassets.com/theme_assets/67158/c28adb2e3532619ebc9a9072599677f56ebee94b.png'></img>
+                    <a href='https://www.scrumalliance.org'><img class='partnerImg' src='https://theme.zdassets.com/theme_assets/67158/c28adb2e3532619ebc9a9072599677f56ebee94b.png'></img></a>
                     
                 </div>
                 </div>
@@ -216,7 +216,7 @@ export default function Home(){
                     <br></br>
                     <h3>Scrum.org</h3>
                     <br></br>
-                    <img class='partnerImg' src='https://devon.global/wp-content/uploads/2018/11/scrumorg-logo.png'></img>
+                    <a href='https://www.scrum.org'><img class='partnerImg' src='https://devon.global/wp-content/uploads/2018/11/scrumorg-logo.png'></img></a>
                 </div>
                 </div>
             </div>
