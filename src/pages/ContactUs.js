@@ -102,7 +102,7 @@ export default function ContactUs(){
               </div>
               <div>
                 <FormControl variant='standard' className='cnt-form'>
-                <h2>Contact Us</h2>
+                <h2 style={{marginLeft: '170px'}}>Contact Us</h2>
                     <label>Name</label>
                     <input type='text' id="name" name='name'/>
                     <label>Email Address</label>
