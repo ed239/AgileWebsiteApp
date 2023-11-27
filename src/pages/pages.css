@@ -261,16 +261,20 @@
     display: flex;
     justify-content: center;
   }
+
   .submit-btn {
     padding: 0.5rem 1rem;
     border: 1px solid black;
     background: black; /* Updated background color */
     margin: 1.2rem 0;
+    margin-left:160px;
     color: white; /* Ensuring text is visible on the black background */
     font-size: 0.9rem;
     font-weight: 700;
+    width:auto;
+    max-width:150px;
     cursor: pointer;
-}
+  }
 
   .dialog-box {
     margin: 0;
@@ -723,6 +727,10 @@
   width: 40%;
   height: 570px;
 } */
+
+.contactus-main h2 {
+  margin-left: 170px;
+}
 
 .popup {
   position: fixed;
