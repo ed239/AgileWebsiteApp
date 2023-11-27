@@ -44,9 +44,10 @@ export default function ContactUs(){
           return 'Please enter valid fullname with no special character. Minimum two characters';
         }
         else{
-            return 'Sign Up Successful!';
+            return 'Message Successfully sent!';
         }
     }
+    
 
 
 
@@ -54,7 +55,7 @@ export default function ContactUs(){
         
         event.preventDefault(); // Prevents the default form submission behavior
         setShowPopup(true);
-        if(ValidationResult() !="Sign Up Successful!"){
+        if(ValidationResult() !="Message Successfully sent!"){
             return
         } 
     
@@ -101,6 +102,7 @@ export default function ContactUs(){
               </div>
               <div>
                 <FormControl variant='standard' className='cnt-form'>
+                <h2>Contact Us</h2>
                     <label>Name</label>
                     <input type='text' id="name" name='name'/>
                     <label>Email Address</label>
