@@ -1,0 +1,14 @@
+1. configure env
+kubectl create configmap agile-env --from-env-file="backend api"/.env
+
+2. start k8 from definition:
+kubectl apply -f deploy.yaml
+
+3. forward port to outside port
+kubectl port-forward svc/authentication-service 5000:5000
+
+
+3. find nodePort of reactjs-service using following command:
+kubectl get service
+for example if ports shows 3000:31590/TCP then nodePort is 31590
+Then the address is localhost:31590
